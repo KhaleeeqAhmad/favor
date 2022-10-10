@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.navigation:navigation-dynamic-features-fragment:2.5.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0ae5e7de4b9e3dfc8b13b52f54505cdb/transformed/navigation-dynamic-features-fragment-2.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ae5e7de4b9e3dfc8b13b52f54505cdb/transformed/navigation-dynamic-features-fragment-2.5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0ae5e7de4b9e3dfc8b13b52f54505cdb/transformed/navigation-dynamic-features-fragment-2.5.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.navigation/navigation-dynamic-features-fragment/2.5.2/dd39080110d7d0be8ce354f5fd30968f17c18c72/navigation-dynamic-features-fragment-2.5.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

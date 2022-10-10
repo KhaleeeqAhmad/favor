@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment2">
+    <fragment
+        android:id="@+id/userProfileFragment2"
+        android:name="com.fyp.favorproject.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/askFavorFragment2"
+        android:name="com.fyp.favorproject.mainFragment.AskFavorFragment"
+        android:label="AskFavorFragment" />
+    <fragment
+        android:id="@+id/chatFragment2"
+        android:name="com.fyp.favorproject.mainFragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.fyp.favorproject.mainFragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/notificationFragment2"
+        android:name="com.fyp.favorproject.mainFragment.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/storeFragment2"
+        android:name="com.fyp.favorproject.mainFragment.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" />
+</navigation>

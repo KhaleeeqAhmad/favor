@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Favor</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="username_hint">Full Name</string>
+    <string name="home">Home</string>
+    <string name="store">Store</string>
+    <string name="chat">Messages</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="connect_using_google">Connect using Google</string>
+    <string name="are_you_a_new_user">Are you a new User?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="new_post">New Post</string>
+    <string name="notifications">Notifications</string>
+    <string name="sign_in">Sign in</string>
+    <string name="search">Search</string>
+    <string name="favor">Favor</string>
+    <string name="store_topbar">Store</string>
+    <string name="home_topbar">Home</string>
+    <string name="messages">Messages</string>
+
+
+    //RecyclerView
+
+    //Post Description
+    <string name="affirmation1">I am strong.</string>
+    <string name="affirmation2">I believe in myself.</string>
+    <string name="affirmation3">Each day is a new opportunity to grow and be a better version of myself.</string>
+    <string name="affirmation4">Every challenge in my life is an opportunity to learn from.</string>
+    <string name="affirmation5">I have so much to be grateful for.</string>
+    <string name="affirmation6">Good things are always coming into my life.</string>
+    <string name="affirmation7">New opportunities await me at every turn.</string>
+    <string name="affirmation8">I have the courage to follow my heart.</string>
+    <string name="affirmation9">Things will unfold at precisely the right time.</string>
+    <string name="affirmation10">I will be present in all the moments that this day brings.</string>
+    //UserName
+
+    <string name="userOne">Khaleeq Ahmad</string>
+    <string name="userTwo">Muhammad Rehan</string>
+    <string name="userThree">Sarmad Sohaib</string>
+    <string name="userFour">Rana Hamza</string>
+    <string name="userFive">Laeeq Ahmad</string>
+    <string name="userSix">Qasim Ali</string>
+    <string name="userSeven">Arslan Khan</string>
+    <string name="userEight">Sohaib Khan</string>
+    <string name="userNine">Aqib Ali</string>
+    <string name="userTen">Sajawal Gujjar</string>
+
+    <string name="userLevel">Level 2</string>
+
+    <string name="postDate">May 22, 2022</string>
+
+    <string name="logout">Logout</string>
+    <string name="ask_favor">Ask Favor</string>
+    <string name="respond">Respond</string>
+    <string name="like">Like</string>
+    <string name="type_description_here">Type Description Here</string>
+    <string name="date">Sat, 24, 2022</string>
+    <string name="level">Level 3</string>
+    <string name="user_name">Khaleeq Ahmad</string>
+    <string name="number_of_likes">45</string>
+
+</resources>
