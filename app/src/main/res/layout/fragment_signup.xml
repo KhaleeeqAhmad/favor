@@ -81,7 +81,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etPasswordSignup"
+        android:id="@+id/etUserPassword"
         style="@style/TextInputLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -98,6 +98,7 @@
         app:startIconTint="@color/my_blue_primary">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPasswordSignup"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword"
@@ -122,25 +123,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup"
+        app:layout_constraintTop_toBottomOf="@+id/etUserPassword"
         tools:ignore="TextContrastCheck" />
 
-    <Button
-        android:id="@+id/btnGoogleSignup"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/my_blue_primary"
-        android:text="Connect using Google"
-        android:textColor="#FFFFFF"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
-        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/already_user_textView"
@@ -153,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSignup" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <TextView
         android:id="@+id/btnSignIn"
@@ -166,6 +151,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/already_user_textView"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogleSignup" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
