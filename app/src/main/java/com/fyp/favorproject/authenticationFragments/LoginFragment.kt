@@ -18,7 +18,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        view = FragmentLoginBinding.inflate(inflater)
+        view = FragmentLoginBinding.inflate(layoutInflater)
 
         view.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_mainActivity)

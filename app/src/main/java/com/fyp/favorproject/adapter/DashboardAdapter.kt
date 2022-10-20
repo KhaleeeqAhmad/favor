@@ -23,7 +23,7 @@ class DashboardAdapter(
         val profileImage: ImageView = view.findViewById(R.id.ivUserProfile)
         val userName: TextView = view.findViewById(R.id.tvUserName)
         val userLevel: TextView = view.findViewById(R.id.tvUserLevel)
-        val postDate : TextView =view.findViewById(R.id.tvPostTime)
+        val postDate: TextView =view.findViewById(R.id.tvPostTime)
         val postDescription: TextView = view.findViewById(R.id.tvPostDescription)
         val postImage : ImageView = view.findViewById(R.id.ivPostImage)
     }

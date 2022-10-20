@@ -10,6 +10,14 @@
     <color name="my_blue_primary">#1764FF</color>
     <color name="my_blue_light">#6f91ff</color>
     <color name="my_blue_dark">#003bcb</color>
+    <color name="colorPrimary">#FF9800</color>
+    <color name="colorPrimaryDark">#E65100</color>
+    <color name="colorAccent">#2E7D32</color>
+    <color name="colorTitle">#ffffff</color>
+    <color name="colorLightGray">#ececec</color>
+    <color name="colorGray">#dedede</color>
+    <color name="colorDarkGray">#b4b4b4</color>
+    <color name="colorBlue">#2962FF</color>
 
 
     <color name="lightGray">#F9F9F9</color>

@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.fyp.favorproject.R
-import com.fyp.favorproject.UserProfileFragment
 import com.fyp.favorproject.databinding.ActivityMainBinding
 import com.fyp.favorproject.mainFragment.ChatFragment
 import com.fyp.favorproject.mainFragment.HomeFragment
@@ -20,8 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
 
 
 
