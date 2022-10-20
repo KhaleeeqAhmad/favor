@@ -1,6 +1,5 @@
 package com.fyp.favorproject.authenticationFragments
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,24 +10,27 @@ import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.FragmentSignupBinding
 
 
-class SignupFragment : Fragment() {
 
-    private lateinit var view: FragmentSignupBinding
+class SignupFragment : Fragment() {
+    private lateinit var binding: FragmentSignupBinding
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        view = FragmentSignupBinding.inflate(inflater)
+        binding = FragmentSignupBinding.inflate(inflater)
 
-        view.btnSignup.setOnClickListener {
-            findNavController().navigate(R.id.action_signupFragment_to_mainActivity)
+        binding.btnSignup.setOnClickListener {
+         findNavController().navigate(R.id.action_signupFragment_to_mainActivity)
         }
-        view.btnSignIn.setOnClickListener {
+        binding.btnSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
         }
 
-        return view.root
+        return binding.root
     }
+
 }
