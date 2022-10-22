@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".mainFragment.ChatFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chats"
-        android:textSize="48sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_userslist_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:listitem="@layout/chat_row_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

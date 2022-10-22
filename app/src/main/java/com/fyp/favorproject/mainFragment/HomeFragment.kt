@@ -21,7 +21,6 @@ class HomeFragment : Fragment(R.layout.fragment_home){
     ): View {
         mBinding = FragmentHomeBinding.inflate(inflater)
 
-
         val myDataSet = Datasource().loadPosts()
         mBinding.recyclerViewPosts.adapter = DashboardAdapter(this,myDataSet)
         mBinding.recyclerViewPosts.setHasFixedSize(true)

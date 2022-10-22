@@ -9,16 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.FragmentSignupBinding
-import com.fyp.favorproject.model.User
+import com.fyp.favorproject.model.Users
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 
 
 class SignupFragment : Fragment() {
@@ -39,17 +33,21 @@ class SignupFragment : Fragment() {
         binding = FragmentSignupBinding.inflate(inflater)
 
         binding.btnSignup.setOnClickListener() {
-            var name = binding.etUserNameSignup.text.toString()
-            var email = binding.etEmailSignup.text.toString().trim()
-            var password = binding.etPasswordSignup.toString()
+            //getting user inputs into variables
+            val name = binding.etUserNameSignup.text.toString()
+            val email = binding.etEmailSignup.text.toString().trim()
+            val password = binding.etPasswordSignup.text.toString()
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val newUser = User(name, email, password)
+                        val newUser = Users(name, email, password)
+                        //accessing id;
+                        // by authentication result we get a user and against that user we get its id
                         val id = it.result.user?.uid as String
+
                         database.reference.child("User").child(id).setValue(newUser)
-                        Toast.makeText(context, "UserDataSaved", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Account created", Toast.LENGTH_SHORT).show()
 
                     } else {
                         // If sign in fails, display a message to the user.
@@ -60,43 +58,4 @@ class SignupFragment : Fragment() {
         }
         return binding.root
     }
-
-//    override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = auth.currentUser
-//        if(currentUser != null){
-//            reload()
-//        }
-//    }
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        // Buttons
-//        with (binding) {
-//            emailSignInButton.setOnClickListener {
-//                val email = binding.fieldEmail.text.toString()
-//                val password = binding.fieldPassword.text.toString()
-//                signIn(email, password)
-//            }
-//            btnSignup.setOnClickListener {
-//                val email = etEmailSignup.text.toString()
-//                val password = etPasswordSignup.text.toString()
-//                createAccount(email, password)
-//            }
-//        }
-//
-//        // Initialize Firebase Auth
-//        auth = Firebase.auth
-//    }
-//
-//    private fun updateUI(user: FirebaseUser?) {
-//
-//    }
-//
-//    private fun reload() {
-//
-//    }
-
 }
