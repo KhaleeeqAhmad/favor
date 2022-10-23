@@ -1,13 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.firebaseui:firebase-ui-auth:8.0.1@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c1385295cabde9155e7dcd316d0e1e12/transformed/firebase-ui-auth-8.0.1/annotations.zip!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ce266687b3378c7a7afdb698ad70d883/transformed/firebase-ui-auth-8.0.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c1385295cabde9155e7dcd316d0e1e12/transformed/firebase-ui-auth-8.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c1385295cabde9155e7dcd316d0e1e12/transformed/firebase-ui-auth-8.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c1385295cabde9155e7dcd316d0e1e12/transformed/firebase-ui-auth-8.0.1/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce266687b3378c7a7afdb698ad70d883/transformed/firebase-ui-auth-8.0.1/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce266687b3378c7a7afdb698ad70d883/transformed/firebase-ui-auth-8.0.1/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ce266687b3378c7a7afdb698ad70d883/transformed/firebase-ui-auth-8.0.1/jars/classes.jar!/" />

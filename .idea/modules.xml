@@ -7,9 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.unitTest.iml" />
     </modules>
   </component>
 </project>
