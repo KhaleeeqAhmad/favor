@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f5da14225c755dd710dd6c3b6c13b1c9/transformed/play-services-auth-19.0.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f5da14225c755dd710dd6c3b6c13b1c9/transformed/play-services-auth-19.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f5da14225c755dd710dd6c3b6c13b1c9/transformed/play-services-auth-19.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4c9310c3a9a97ea9e139888e031af705/transformed/play-services-auth-19.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4c9310c3a9a97ea9e139888e031af705/transformed/play-services-auth-19.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4c9310c3a9a97ea9e139888e031af705/transformed/play-services-auth-19.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-auth/19.0.0/3b59304365c13d789c43fe9eb65dfe174583aab6/play-services-auth-19.0.0-javadoc.jar!/" />

@@ -1,0 +1,61 @@
+{
+  "project_info": {
+<<<<<<< HEAD:gradle/google-services.json
+    "project_number": "986484798545",
+    "project_id": "fyp-favor",
+    "storage_bucket": "fyp-favor.appspot.com"
+=======
+    "project_number": "842845797657",
+    "project_id": "favor-95f5e",
+    "storage_bucket": "favor-95f5e.appspot.com"
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa:app/google-services.json
+  },
+  "client": [
+    {
+      "client_info": {
+<<<<<<< HEAD:gradle/google-services.json
+        "mobilesdk_app_id": "1:986484798545:android:369beb78d5d28837ad7470",
+=======
+        "mobilesdk_app_id": "1:842845797657:android:f0112aa7b66b3a74231988",
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa:app/google-services.json
+        "android_client_info": {
+          "package_name": "com.fyp.favorproject"
+        }
+      },
+      "oauth_client": [
+        {
+<<<<<<< HEAD:gradle/google-services.json
+          "client_id": "986484798545-4hpsuul4ae1sc967qsd7l8l0j31bc7ij.apps.googleusercontent.com",
+=======
+          "client_id": "842845797657-43qnvuarrj325nf8992efiqmgjj8e25a.apps.googleusercontent.com",
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa:app/google-services.json
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+<<<<<<< HEAD:gradle/google-services.json
+          "current_key": "AIzaSyAekZVdm2L5sR33Rx02jUev0nk_OWr4A40"
+=======
+          "current_key": "AIzaSyCQsxqwueXqvSWCBHLbwTAw2LDaCfuqWUg"
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa:app/google-services.json
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+<<<<<<< HEAD:gradle/google-services.json
+              "client_id": "986484798545-4hpsuul4ae1sc967qsd7l8l0j31bc7ij.apps.googleusercontent.com",
+=======
+              "client_id": "842845797657-43qnvuarrj325nf8992efiqmgjj8e25a.apps.googleusercontent.com",
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa:app/google-services.json
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

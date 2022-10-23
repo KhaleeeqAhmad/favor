@@ -1,2 +1,6 @@
 *.log
 local.properties
+*.checksum
+*.bin
+*.probe
+*.idea

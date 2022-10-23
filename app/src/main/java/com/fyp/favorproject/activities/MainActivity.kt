@@ -10,7 +10,6 @@ import com.fyp.favorproject.mainFragment.ChatFragment
 import com.fyp.favorproject.mainFragment.HomeFragment
 import com.fyp.favorproject.mainFragment.NotificationFragment
 import com.fyp.favorproject.mainFragment.StoreFragment
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -19,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.userImage.setOnClickListener {
+            // User Profile
+        }
 
 
         /** Fragments */
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.askFavorFragment -> {
                     binding.bottomNavigation.visibility = View.GONE
-                    binding.tbMain.visibility = View.GONE
+                    binding.tbMain.visibility = View.VISIBLE
                 }
                 R.id.notificationFragment -> {
                     setCurrentFragment(notificationFragment)
@@ -61,7 +63,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    //test
 
 
 
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fragmentHolder, fragment)
             commit()
         }
+
 
 }
 
