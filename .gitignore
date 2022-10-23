@@ -5,3 +5,4 @@ local.properties
 *.probe
 *.idea
 *.lock
+/.gradle/7.5/checksums/*
