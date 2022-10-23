@@ -7,10 +7,15 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.fyp.favorproject.databinding.FragmentSignupBinding
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.fyp.favorproject.model.Users
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
+=======
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
 =======
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -38,6 +43,7 @@ class SignupFragment : Fragment() {
         binding = FragmentSignupBinding.inflate(inflater)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         binding.btnSignup.setOnClickListener() {
             //getting user inputs into variables
             val name = binding.etUserNameSignup.text.toString()
@@ -64,6 +70,10 @@ class SignupFragment : Fragment() {
 =======
         isUserAlreadyLoggedIn()
 
+=======
+        isUserAlreadyLoggedIn()
+
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
         binding.btnSignup.setOnClickListener {
            if(binding.etUserNameSignup.text.toString().isBlank() ||
                binding.etEmailSignup.text.toString().isBlank() ||
@@ -73,6 +83,9 @@ class SignupFragment : Fragment() {
            } else {
                signUp()
            }
+<<<<<<< HEAD
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+=======
 >>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
         }
         binding.btnSignIn.setOnClickListener {
@@ -82,8 +95,11 @@ class SignupFragment : Fragment() {
         return binding.root
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
     private fun signUp() {
         val name = binding.etUserNameSignup.text.toString()
         val email = binding.etEmailSignup.text.toString().trim()
@@ -109,4 +125,7 @@ class SignupFragment : Fragment() {
         }
     }
 }
+<<<<<<< HEAD
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+=======
 >>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6

@@ -226,11 +226,15 @@
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.13.2/41c0ddef7eb508bb6de9a93a85c8d4be82f65047/annotations-4.13.2.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0f3c584abceb5fe04691c29bc2cbc360/transformed/circleimageview-3.1.0-api.jar</arg>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/257ebdf839e4ae82b9d8b8ba2c0318b9/transformed/picasso-2.71828-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e/okhttp-3.10.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6a220867337d2299899c0bd9724e899f/transformed/exifinterface-27.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.0/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.0.jar</arg>
+=======
+>>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
 =======
 >>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
 >>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6

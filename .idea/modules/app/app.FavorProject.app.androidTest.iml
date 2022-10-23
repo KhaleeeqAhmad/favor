@@ -347,4 +347,8 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.firebaseui:firebase-ui-common:8.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.paging:paging-rxjava3:3.0.0@aar" level="project" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="TestModuleProperties" production-module="FavorProject.app.main" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
 </module>
