@@ -1,21 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar">
     <ANNOTATIONS>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/100111544657b437184b2a1517ac98a2/transformed/viewpager2-1.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/55fe2c08f27981da30ed67df83c31d7b/transformed/viewpager2-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/100111544657b437184b2a1517ac98a2/transformed/viewpager2-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/100111544657b437184b2a1517ac98a2/transformed/viewpager2-1.0.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/100111544657b437184b2a1517ac98a2/transformed/viewpager2-1.0.0/res" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0e00d420224f1aadb2549c6da9d00ed9/transformed/viewpager2-1.0.0/annotations.zip!/" />
-    </ANNOTATIONS>
-    <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0e00d420224f1aadb2549c6da9d00ed9/transformed/viewpager2-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0e00d420224f1aadb2549c6da9d00ed9/transformed/viewpager2-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0e00d420224f1aadb2549c6da9d00ed9/transformed/viewpager2-1.0.0/res" />
->>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/55fe2c08f27981da30ed67df83c31d7b/transformed/viewpager2-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/55fe2c08f27981da30ed67df83c31d7b/transformed/viewpager2-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/55fe2c08f27981da30ed67df83c31d7b/transformed/viewpager2-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

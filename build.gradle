@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-=======
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules
->>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
+
 buildscript {
     repositories {
         // Make sure that you have the following two repositories
@@ -13,11 +12,8 @@ buildscript {
 
     }
 }
-<<<<<<< HEAD
-=======
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
->>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
 plugins {
     id 'com.android.application' version '7.3.1' apply false
     id 'com.android.library' version '7.3.1' apply false

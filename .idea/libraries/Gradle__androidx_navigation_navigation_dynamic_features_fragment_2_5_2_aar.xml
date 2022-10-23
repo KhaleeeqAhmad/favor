@@ -1,15 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.navigation:navigation-dynamic-features-fragment:2.5.2@aar">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5504f05f551b6d65f050a37ee089b6c7/transformed/navigation-dynamic-features-fragment-2.5.2/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5504f05f551b6d65f050a37ee089b6c7/transformed/navigation-dynamic-features-fragment-2.5.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5504f05f551b6d65f050a37ee089b6c7/transformed/navigation-dynamic-features-fragment-2.5.2/AndroidManifest.xml" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2a32549639a6d11a808951f7f928f559/transformed/navigation-dynamic-features-fragment-2.5.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2a32549639a6d11a808951f7f928f559/transformed/navigation-dynamic-features-fragment-2.5.2/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2a32549639a6d11a808951f7f928f559/transformed/navigation-dynamic-features-fragment-2.5.2/res" />
->>>>>>> e92599ac15c86a732a38b6553770c990ad024ffa
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dc7f11f74bba305fec5876b342431352/transformed/navigation-dynamic-features-fragment-2.5.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dc7f11f74bba305fec5876b342431352/transformed/navigation-dynamic-features-fragment-2.5.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dc7f11f74bba305fec5876b342431352/transformed/navigation-dynamic-features-fragment-2.5.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

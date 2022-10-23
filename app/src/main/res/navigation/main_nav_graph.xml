@@ -5,8 +5,8 @@
     android:id="@+id/main_nav_graph"
     app:startDestination="@id/homeFragment2">
     <fragment
-        android:id="@+id/userProfileFragment2"
-        android:name="com.fyp.favorproject.UserProfileFragment"
+        android:id="@+id/userProfileFragment"
+        android:name="com.fyp.favorproject.mainFragment.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
     <fragment
