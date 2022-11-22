@@ -169,6 +169,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="chattingActivity">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="236" />
+                            <option name="y" value="309" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="homeFragment2">
                     <value>
                       <LayoutPositions>
@@ -205,13 +217,13 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="userProfileFragment2">
+                  <entry key="userProfileFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-424" />
-                            <option name="y" value="-18" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

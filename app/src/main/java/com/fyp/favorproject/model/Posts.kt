@@ -9,5 +9,9 @@ data class Posts(
   @StringRes  val userLevelResourceID: Int,
   @StringRes  val postDateResourceID: Int,
   @StringRes  val postDescriptionResourceID: Int,
-  @DrawableRes  val postImageResourceID: Int
+  @DrawableRes  val postImageResourceID: Int,
+
+  // temp---solve it later
+  val uid:String
+
     )

@@ -66,5 +66,9 @@
     <string name="user_level">User Level</string>
     <string name="post_desc">post_desc</string>
     <string name="close">Close</string>
+    <string name="message">Message</string>
+    <string name="message_hint">message_hint</string>
+    <string name="sample_user_name">User Name</string>
+    <string name="online_status">Online</string>
 
 </resources>

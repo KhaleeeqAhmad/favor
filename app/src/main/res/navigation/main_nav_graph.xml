@@ -33,4 +33,10 @@
         android:name="com.fyp.favorproject.mainFragment.StoreFragment"
         android:label="fragment_store"
         tools:layout="@layout/fragment_store" />
+    <activity
+        android:id="@+id/chattingActivity"
+        android:name="com.fyp.favorproject.mainFragment.ChattingActivity"
+        android:label="activity_chatting"
+        tools:layout="@layout/activity_chatting" >
+    </activity>
 </navigation>

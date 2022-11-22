@@ -26,6 +26,17 @@ class DashboardAdapter(
         val postDate: TextView =view.findViewById(R.id.tvPostTime)
         val postDescription: TextView = view.findViewById(R.id.tvPostDescription)
         val postImage : ImageView = view.findViewById(R.id.ivPostImage)
+
+        val btnRespond:TextView = view.findViewById(R.id.btnRespond)
+
+
+
+    init {
+        btnRespond.setOnClickListener{
+
+        }
+    }
+
     }
 
 

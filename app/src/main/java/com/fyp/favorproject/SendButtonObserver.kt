@@ -8,10 +8,10 @@ class SendButtonObserver (private val button: ImageView) : TextWatcher {
         override fun onTextChanged(charSequence: CharSequence, start: Int, count: Int, after: Int) {
             if (charSequence.toString().trim().isNotEmpty()) {
                 button.isEnabled = true
-                button.setImageResource(R.drawable.outline_send_24)
+                button.setImageResource(R.drawable.ic_send)
             } else {
                 button.isEnabled = false
-                button.setImageResource(R.drawable.outline_send_gray_24)
+                button.setImageResource(R.drawable.ic_send_disabled)
             }
         }
 

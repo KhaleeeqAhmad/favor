@@ -1,17 +1,18 @@
 package com.fyp.favorproject.mainFragment
 
-import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.fyp.favorproject.R
 import com.fyp.favorproject.adapter.UsersAdapter
 import com.fyp.favorproject.databinding.FragmentChatBinding
-import com.fyp.favorproject.model.Users
+import com.fyp.favorproject.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -25,8 +26,8 @@ class ChatFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private lateinit var usersAdapter: UsersAdapter
-    private lateinit var usersArrayList:ArrayList<Users>
-    var user: Users? = null
+    private lateinit var usersArrayList:ArrayList<User>
+    var user: User? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,12 +38,14 @@ class ChatFragment : Fragment() {
 
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
-        usersArrayList = ArrayList<Users>()
-        usersAdapter = UsersAdapter(usersArrayList)
+        usersArrayList = ArrayList<User>()
+     //   usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList)
+        usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList,this)
+
 
         database.reference.child("User").child(auth.uid.toString()).addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                user = snapshot.getValue(Users::class.java)
+                user = snapshot.getValue(User::class.java)
             }
 
             override fun onCancelled(error: DatabaseError) {}
@@ -55,7 +58,7 @@ class ChatFragment : Fragment() {
 
                usersArrayList.clear()
                 for (snapshot1 in snapshot.children){
-                    val user:Users? = snapshot1.getValue(Users::class.java)
+                    val user:User? = snapshot1.getValue(User::class.java)
                     if (!user!!.uid.equals(FirebaseAuth.getInstance().uid)) usersArrayList.add(user)
                 }
                 usersAdapter.notifyDataSetChanged()
@@ -64,38 +67,7 @@ class ChatFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) {}
         })
 
-
-
-//        database.reference.child("User").addValueEventListener(object: ValueEventListener{
-//                override fun onDataChange(snapshot: DataSnapshot){
-//
-//                    for (dataSnapshot in snapshot.children) {
-//                        //user = dataSnapshot.getValue(User::class.java)
-//                        val user: User? = dataSnapshot.getValue(User::class.java)
-//
-//
-//
-//                    }
-//                }
-//                override fun onCancelled(error: DatabaseError) {
-//                    // Failed to read value
-//                    Log.w(TAG, "Failed to read value.", error.toException())
-//                }
-//            })
-
-
         return binding.root
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        val currentId = FirebaseAuth.getInstance().uid
-//        database.reference.child("Presence").child(currentId!!).setValue("Online")
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        val currentId = FirebaseAuth.getInstance().uid
-//        database.reference.child("Presence").child(currentId!!).setValue("Offline")
-//    }
 }

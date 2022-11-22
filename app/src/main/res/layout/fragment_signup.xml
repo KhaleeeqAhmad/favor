@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
     <TextView
-        android:id="@+id/btnSignIn"
+        android:id="@+id/tvSignIn_alreadyuser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

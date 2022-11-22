@@ -53,11 +53,9 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
-                    Toast.makeText(context, "Login Successful!", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(context, "Login Successful!", Toast.LENGTH_SHORT).show()
                 }else {
-                    Toast.makeText(context, "Please check your email & password and try again!", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(context, "Please check your email & password and try again!", Toast.LENGTH_SHORT).show()
                 }
             }
 
