@@ -1,23 +1,21 @@
 package com.fyp.favorproject.mainFragment
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.fyp.favorproject.R
 import com.fyp.favorproject.adapter.UsersAdapter
 import com.fyp.favorproject.databinding.FragmentChatBinding
-import com.fyp.favorproject.model.User
+import com.fyp.favorproject.model.Chats
+import com.fyp.favorproject.model.Users
+import com.fyp.favorproject.utill.ChatsCallBack
+import com.fyp.favorproject.utill.UserHelper
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 class ChatFragment : Fragment() {
 
@@ -26,8 +24,8 @@ class ChatFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private lateinit var usersAdapter: UsersAdapter
-    private lateinit var usersArrayList:ArrayList<User>
-    var user: User? = null
+    private lateinit var usersArrayList:ArrayList<Users>
+    var user: Users? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,34 +36,51 @@ class ChatFragment : Fragment() {
 
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
-        usersArrayList = ArrayList<User>()
-     //   usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList)
-        usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList,this)
+        usersArrayList = ArrayList<Users>()
 
+        binding.progressBarChatFragment.visibility=View.VISIBLE
+        UserHelper.getCurrentUserChats(object : ChatsCallBack{
 
-        database.reference.child("User").child(auth.uid.toString()).addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                user = snapshot.getValue(User::class.java)
-            }
+            override fun onChatsFetched(chats: ArrayList<Chats>) {
+                if (chats.size<=0){
+                    Toast.makeText(context, "No Chat Found", Toast.LENGTH_SHORT).show()
+                    binding.progressBarChatFragment.visibility=View.GONE
+                }else{
+                    usersAdapter = UsersAdapter(context?.applicationContext as Context, chats,this@ChatFragment)
 
-            override fun onCancelled(error: DatabaseError) {}
-        })
+                    binding.rvUserslistChat.adapter = usersAdapter
+                    binding.progressBarChatFragment.visibility=View.GONE
 
-        binding.rvUserslistChat.adapter = usersAdapter
-        database.reference.child("User").addValueEventListener(object: ValueEventListener{
-           // @SuppressLint("NotifyDataSetChanged")
-            override fun onDataChange(snapshot: DataSnapshot) {
-
-               usersArrayList.clear()
-                for (snapshot1 in snapshot.children){
-                    val user:User? = snapshot1.getValue(User::class.java)
-                    if (!user!!.uid.equals(FirebaseAuth.getInstance().uid)) usersArrayList.add(user)
                 }
-                usersAdapter.notifyDataSetChanged()
             }
 
-            override fun onCancelled(error: DatabaseError) {}
         })
+
+     //   usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList)
+//
+//
+//        database.reference.child("User").child(auth.uid.toString()).addValueEventListener(object : ValueEventListener{
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                user = snapshot.getValue(User::class.java)
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {}
+//        })
+
+//        database.reference.child("User").addValueEventListener(object: ValueEventListener{
+//           // @SuppressLint("NotifyDataSetChanged")
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//
+//               usersArrayList.clear()
+//                for (snapshot1 in snapshot.children){
+//                    val user:User? = snapshot1.getValue(User::class.java)
+//                    if (!user!!.uid.equals(FirebaseAuth.getInstance().uid)) usersArrayList.add(user)
+//                }
+//                usersAdapter.notifyDataSetChanged()
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {}
+//        })
 
         return binding.root
     }

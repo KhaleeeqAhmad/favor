@@ -11,7 +11,7 @@ data class Posts(
   @StringRes  val postDescriptionResourceID: Int,
   @DrawableRes  val postImageResourceID: Int,
 
-  // temp---solve it later
-  val uid:String
+//  // temp---solve it later
+  val uid:String?="user1"
 
     )

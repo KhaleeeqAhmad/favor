@@ -1,14 +1,14 @@
 package com.fyp.favorproject.model
 
 
-class User{
+class Users{
     var name: String? = null
     var email: String? = null
     var password: String? = null
     var profilePic: String? = null
     var uid: String? = null
     var lastMessage: String? = null
-  //  var userChats:List<Chats>?=null
+    var userChats:List<Chats>?=null
 
 
     //empty constructor

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fyp.favorproject.R
 import com.fyp.favorproject.mainFragment.HomeFragment
 import com.fyp.favorproject.model.Posts
+import com.fyp.favorproject.utill.UserHelper
 
 
 /**
@@ -23,19 +24,12 @@ class DashboardAdapter(
         val profileImage: ImageView = view.findViewById(R.id.ivUserProfile)
         val userName: TextView = view.findViewById(R.id.tvUserName)
         val userLevel: TextView = view.findViewById(R.id.tvUserLevel)
-        val postDate: TextView =view.findViewById(R.id.tvPostTime)
+        val postDate: TextView = view.findViewById(R.id.tvPostTime)
         val postDescription: TextView = view.findViewById(R.id.tvPostDescription)
-        val postImage : ImageView = view.findViewById(R.id.ivPostImage)
+        val postImage: ImageView = view.findViewById(R.id.ivPostImage)
 
-        val btnRespond:TextView = view.findViewById(R.id.btnRespond)
+        val btnRespond: TextView = view.findViewById(R.id.btnRespond)
 
-
-
-    init {
-        btnRespond.setOnClickListener{
-
-        }
-    }
 
     }
 
@@ -61,6 +55,13 @@ class DashboardAdapter(
         holder.postDate.text = context.resources.getString(item.postDateResourceID)
         holder.postDescription.text = context.resources.getString(item.postDescriptionResourceID)
         holder.postImage.setImageResource(item.postImageResourceID)
+
+        holder.btnRespond.setOnClickListener {
+
+            val friendUID = dataSet[position].uid
+            UserHelper.openChat(friendUID,dataSet[position],context)
+
+        }
     }
 
     /**
