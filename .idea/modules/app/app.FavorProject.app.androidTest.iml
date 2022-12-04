@@ -425,5 +425,8 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.squareup.picasso:picasso:2.71828@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:exifinterface:27.1.0@aar" level="project" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="TestModuleProperties" production-module="FavorProject.app.main" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
 </module>

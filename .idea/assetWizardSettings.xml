@@ -330,7 +330,19 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
+<<<<<<< HEAD
                                       <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/favorite/baseline_favorite_24.xml" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/keyboard_backspace/baseline_keyboard_backspace_24.xml" />
+=======
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialiconsround/close/round_close_24.xml" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+=======
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialiconsround/close/round_close_24.xml" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -341,8 +353,22 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
+<<<<<<< HEAD
                             <entry key="color" value="1764ff" />
                             <entry key="outputName" value="ic_post_liked" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+                            <entry key="color" value="ececec" />
+                            <entry key="opacityPercent" value="75" />
+                            <entry key="outputName" value="ic_backspace" />
+=======
+                            <entry key="outputName" value="ic_close" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+=======
+                            <entry key="outputName" value="ic_close" />
+>>>>>>> 60ddfe195f46852ecdbc31a5a04a95e80654e8b6
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
                             <entry key="sourceFile" value="C:\Users\rmuha\Downloads\splash.svg" />
                           </map>
                         </option>

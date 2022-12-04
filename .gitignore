@@ -1,2 +1,8 @@
 *.log
 local.properties
+*.checksum
+*.bin
+*.probe
+*.idea
+*.lock
+/.gradle/7.5/checksums/*

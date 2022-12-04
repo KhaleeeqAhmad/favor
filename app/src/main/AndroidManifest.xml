@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+=======
+    <uses-permission android:name="android.permission.INTERNET" />
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
 
     <application
         android:allowBackup="true"
@@ -17,7 +21,18 @@
         android:theme="@style/Theme.FavorProject"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".activities.AuthenticationActivity"
+=======
+            android:name=".ChattingActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.UserAuthenticationActivity"
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -50,9 +65,17 @@
         </activity>
         <activity
             android:name=".activities.MainActivity"
+<<<<<<< HEAD
             android:exported="false">
 
         </activity>
+=======
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
     </application>
 
 </manifest>
