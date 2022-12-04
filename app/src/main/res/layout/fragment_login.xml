@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authenticationFragments.LoginFragment">
+    tools:context=".fragments.LoginFragment">
 
-    <TextView
-        android:id="@+id/tvLoginTitle"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTitleUserLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="@string/login"
-        android:textColor="#1764FF"
+        android:textColor="?attr/colorPrimary"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,136 +20,92 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etLogin"
-        style="@style/TextInputLayoutStyle"
+        android:id="@+id/etEmailUserLogin"
+        style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="64dp"
-        android:hint="@string/email_hint"
+        android:hint="@string/email"
         app:boxCornerRadiusTopEnd="15dp"
         app:boxCornerRadiusTopStart="15dp"
-        app:hintTextColor="@color/my_blue_primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleUserLogin"
+        app:startIconContentDescription="Enter Full Name"
         app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/my_blue_primary">
+        app:startIconTint="?attr/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLoginEmail"
+            android:id="@+id/loginEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:shadowRadius="1"
-            android:singleLine="true"
-            android:textColorHint="#1764FF"
-            android:textCursorDrawable="@drawable/text_cursor_color"
-            tools:ignore="TextContrastCheck" />
-
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etLoginDesign"
-        style="@style/TextInputLayoutStyle"
+        android:id="@+id/etPasswordUserLogin"
+        style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:hint="@string/password_hint"
+        android:hint="@string/password"
         app:boxCornerRadiusTopEnd="15dp"
         app:boxCornerRadiusTopStart="15dp"
-        app:hintTextColor="@color/my_blue_primary"
-        app:layout_constraintEnd_toEndOf="@+id/etLogin"
-        app:layout_constraintStart_toStartOf="@+id/etLogin"
-        app:layout_constraintTop_toBottomOf="@+id/etLogin"
-        app:startIconDrawable="@drawable/ic_key"
-        app:startIconTint="@color/my_blue_primary">
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailUserLogin"
+        app:startIconContentDescription="Enter Full Name"
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="?attr/colorPrimary"
+        app:endIconTint="?attr/colorPrimary">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etLoginPassword"
+            android:id="@+id/loginPassword"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:textColorHint="#B71C1C"
-            android:textCursorDrawable="@drawable/text_cursor_color"
-            tools:ignore="TextContrastCheck" />
-
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/my_blue_primary"
-        android:text="@string/login_button"
-        android:textColor="#FFFFFF"
+        android:text="@string/login"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etLoginDesign"
-        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordUserLogin" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/btnForgetPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/forgot_password"
-        android:textAlignment="textEnd"
-        android:textColor="@color/my_blue_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        android:text="@string/forget_password"
+        android:textColor="?attr/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <Button
-        android:id="@+id/btnGoogleLogin"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/my_blue_primary"
-        android:text="@string/connect_using_google"
-        android:textColor="#FFFFFF"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnForgetPassword"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/new_user_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/are_you_a_new_user"
-        android:textAlignment="textEnd"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogleLogin" />
-
-    <TextView
         android:id="@+id/btnGotoSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/sign_up"
-        android:textAlignment="textEnd"
-        android:textColor="@color/my_blue_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/new_user_textView"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoogleLogin" />
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/create_new_account"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnForgetPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
