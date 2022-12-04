@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AskFavorActivity">
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/white"
+        android:padding="16dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/share_post"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnClose"
+        app:layout_constraintStart_toEndOf="@+id/btnClose"
+        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnSelectDocument"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:padding="16dp"
+        android:src="@drawable/ic_select_file"
+        app:layout_constraintBottom_toBottomOf="@+id/btnClose"
+        app:layout_constraintEnd_toStartOf="@+id/btnSelectImage"
+        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btnSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/white"
+        android:padding="16dp"
+        android:src="@drawable/ic_select_image"
+        app:layout_constraintBottom_toBottomOf="@+id/btnClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_dynamic_neutral70"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnClose" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUserProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:src="@color/material_dynamic_neutral40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="@string/user_name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
+        app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSelectPostType"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_post_type"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tvUserName"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+
+    <EditText
+        android:id="@+id/etPostDescription"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:autofillHints="@string/what_s_on_your_mind"
+        android:background="@android:color/transparent"
+        android:gravity="start"
+        android:hint="@string/what_s_on_your_mind"
+        android:inputType="textMultiLine"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/show_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSelectPostType" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPost"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border"
+        android:enabled="false"
+        android:text="@string/post"
+        android:textColor="@color/mediumGray"
+        android:textSize="16sp"
+        app:cornerRadius="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUserProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+
+    <ImageView
+        android:id="@+id/show_image"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="16dp"
+        android:contentDescription="@string/selected_image"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserProfile"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <EditText
+        android:id="@+id/itemPrice"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints="Put Your Price"
+        android:background="@drawable/border_post_button"
+        android:hint="@string/rs"
+        android:inputType="number"
+        android:padding="8dp"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/etPostDescription"
+        app:layout_constraintTop_toBottomOf="@+id/show_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

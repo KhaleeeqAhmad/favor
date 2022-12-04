@@ -3,5 +3,5 @@
     <item android:color="@android:color/transparent" android:state_focused="true" />
     <item android:color="@android:color/transparent" android:state_hovered="true" />
     <item android:color="@android:color/transparent" android:state_enabled="false" />
-    <item android:color="@color/my_blue_primary" />
+    <item android:color="@color/seed" />
 </selector>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,47 +8,44 @@
     tools:context=".activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/tbMain"
+            android:id="@+id/appBarHome"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:menu="@menu/appbar">
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/toolbar_home">
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/userImage"
+                android:id="@+id/btnGotoUserProfile"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_gravity="start"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/profile" />
+                android:src="@drawable/place_holder_image"
+                android:clickable="true"
+                android:focusable="true" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:background="@drawable/search_bar" />
 
             <TextView
-                android:id="@+id/fragmentTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text=""
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                android:id="@+id/searchViewHome"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@drawable/border"
+                android:gravity="center_vertical"
+                android:hint="@string/search_favor"
+                android:paddingHorizontal="5dp"
+                android:textColorHint="#8D6E63" />
+
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentHolder"
@@ -58,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:navGraph="@navigation/main_nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

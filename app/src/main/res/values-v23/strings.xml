@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="share">Share</string>
+    <string name="content_description_media" />
+    <string name="rs_5000">Rs: 5000</string>
+    <string name="share_with_friends">Share with friends</string>
+    <string name="rs">Rs:</string>
+</resources>

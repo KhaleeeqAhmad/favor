@@ -4,9 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/FavorProject.iml" filepath="$PROJECT_DIR$/.idea/modules/FavorProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FavorProject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FavorProject.app.unitTest.iml" />
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.FavorProject.app.androidTest.iml" />
+=======
+>>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
     </modules>
   </component>
 </project>

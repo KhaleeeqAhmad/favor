@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".mainFragment.HomeFragment">
+    android:background="@color/colorLightGray"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPosts"
+<<<<<<< HEAD
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_dashboard"
+=======
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+>>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
         app:layoutManager="LinearLayoutManager"
-        android:scrollbars="vertical"/>
-</FrameLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
