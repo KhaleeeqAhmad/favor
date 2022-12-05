@@ -108,6 +108,7 @@ class AskFavorActivity : AppCompatActivity() {
         binding.btnPost.setOnClickListener {
             uploadPost()
         }
+
         binding.btnSelectPostType.text = options[selectedOptionIndex]
         binding.btnSelectPostType.setOnClickListener {
             MaterialAlertDialogBuilder(this)
@@ -132,6 +133,7 @@ class AskFavorActivity : AppCompatActivity() {
         }
 
     }
+
 
     private fun snackBar(view: View, msg: String) {
         Snackbar.make(view,msg, Snackbar.LENGTH_SHORT)
@@ -277,6 +279,9 @@ class AskFavorActivity : AppCompatActivity() {
             binding.btnPost.background= AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
             binding.btnPost.setTextColor(resources.getColor(R.color.white))
         }
+
+    }
+    private fun delPost(){
 
     }
 }

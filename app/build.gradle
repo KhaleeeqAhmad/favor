@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.fyp.favorproject"
         minSdk 22
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -47,17 +47,17 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.media:media:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-<<<<<<< HEAD
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
-=======
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
     implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation("androidx.navigation:navigation-testing:2.5.3")
@@ -71,12 +71,10 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'androidx.cardview:cardview:1.0.0'
 
-<<<<<<< HEAD
 
+    implementation 'androidx.biometric:biometric-ktx:1.2.0-alpha05'
 
-=======
-    implementation 'com.github.bumptech.glide:glide:4.13.2'
->>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
 

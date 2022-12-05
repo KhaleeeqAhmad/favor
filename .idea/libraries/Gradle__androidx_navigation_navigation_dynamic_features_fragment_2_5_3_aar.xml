@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/634d9dfcb8de44d5f282768fa3824e4d/transformed/navigation-dynamic-features-fragment-2.5.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/634d9dfcb8de44d5f282768fa3824e4d/transformed/navigation-dynamic-features-fragment-2.5.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/634d9dfcb8de44d5f282768fa3824e4d/transformed/navigation-dynamic-features-fragment-2.5.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/bcea46835d726aae9354453da7887043/transformed/jetified-navigation-dynamic-features-fragment-2.5.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bcea46835d726aae9354453da7887043/transformed/jetified-navigation-dynamic-features-fragment-2.5.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/bcea46835d726aae9354453da7887043/transformed/jetified-navigation-dynamic-features-fragment-2.5.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

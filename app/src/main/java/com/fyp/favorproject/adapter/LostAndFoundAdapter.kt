@@ -39,7 +39,7 @@ class LostAndFoundAdapter(
             .placeholder(R.drawable.cover_photo_place_holder)
             .into(holder.postImage)
 
-        val date = "${java.util.Date(currentPost.postTime!!).hours}h ago"
+        @Suppress("DEPRECATION") val date = "${java.util.Date(currentPost.postTime!!).toLocaleString().subSequence(0,11)} "
 
         holder.postDate.text = date
         val description = currentPost.postDescription

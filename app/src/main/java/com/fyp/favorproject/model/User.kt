@@ -9,5 +9,9 @@ data class User(
    val password: String? = null,
    var userID: String? = null,
    val userProfilePhoto: String? = null,
-   val userCoverPhoto: String? = null
+   val userCoverPhoto: String? = null,
+
+//for chat
+
+   val activeChats:ArrayList<Chats>?=null
 )

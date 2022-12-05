@@ -1,5 +1,6 @@
 package com.fyp.favorproject.fragments
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,9 +20,7 @@ import kotlinx.coroutines.withContext
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var auth: FirebaseAuth
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +28,6 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-
         auth = FirebaseAuth.getInstance()
         navigationControl()
 
@@ -71,8 +69,13 @@ class LoginFragment : Fragment() {
                     }
                 }
             }
-        } else Toast.makeText(context, "Empty credentials!", Toast.LENGTH_SHORT).show()
+            if (!email.endsWith("students.cuisahiwal.edu.pk")){
+                Toast.makeText(context, "Enter CUI students mail", Toast.LENGTH_SHORT).show()
+            }
+        }
+        else Toast.makeText(context, "Empty credentials!", Toast.LENGTH_SHORT).show()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
 
         //RecyclerView
         val recyclerView = binding.recyclerViewPosts
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context).apply {reverseLayout = true}.apply { stackFromEnd = true}
         recyclerView.setHasFixedSize(true)
 
         postList = ArrayList()
@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
                         postList.add(post!!)
                     }
                 }
-                val userAdapter = FavorAdapter(context = HomeFragment(), postList)
+                val userAdapter = FavorAdapter(this@HomeFragment, postList)
                 binding.recyclerViewPosts.adapter = userAdapter
                 binding.recyclerViewPosts.visibility = View.VISIBLE
             }

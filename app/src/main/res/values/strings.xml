@@ -6,7 +6,6 @@
     <string name="home">Home</string>
     <string name="store">Store</string>
     <string name="chat">Messages</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
     <string name="login_button">Login</string>
@@ -22,11 +21,6 @@
     <string name="store_topbar">Store</string>
     <string name="home_topbar">Home</string>
     <string name="messages">Messages</string>
-
-
-    //RecyclerView
-
-    //Post Description
     <string name="affirmation1">I am strong.</string>
     <string name="affirmation2">I believe in myself.</string>
     <string name="affirmation3">Each day is a new opportunity to grow and be a better version of myself.</string>
@@ -37,8 +31,6 @@
     <string name="affirmation8">I have the courage to follow my heart.</string>
     <string name="affirmation9">Things will unfold at precisely the right time.</string>
     <string name="affirmation10">I will be present in all the moments that this day brings.</string>
-    //UserName
-
     <string name="userOne">Khaleeq Ahmad</string>
     <string name="userTwo">Muhammad Rehan</string>
     <string name="userThree">Sarmad Sohaib</string>
@@ -49,11 +41,8 @@
     <string name="userEight">Sohaib Khan</string>
     <string name="userNine">Aqib Ali</string>
     <string name="userTen">Sajawal Gujjar</string>
-
     <string name="userLevel">Level 2</string>
-
     <string name="postDate">May 22, 2022</string>
-
     <string name="logout">Logout</string>
     <string name="ask_favor">Ask Favor</string>
     <string name="respond">Respond</string>
@@ -66,15 +55,11 @@
     <string name="user_level">User Level</string>
     <string name="post_desc">post_desc</string>
     <string name="close">Close</string>
-<<<<<<< HEAD
-    <string name="message">Message</string>
     <string name="message_hint">message_hint</string>
     <string name="sample_user_name">User Name</string>
     <string name="online_status">Online</string>
-=======
     <string name="share_post">Share Post</string>
     <string name="post">Post</string>
-    <string name="khaleeq_ahmad">Khaleeq Ahmad</string>
     <string name="upload_a_document">Upload a Document</string>
     <string name="upload_a_picture">Upload a Picture</string>
     <string name="what_s_on_your_mind">What\'s on your mind?</string>
@@ -94,13 +79,11 @@
     <string name="posts">Posts</string>
     <string name="activity">Activity</string>
     <string name="about">About</string>
-    <string name="kdkakajhdklahklahdkladhlkahklahdfkladhhalhjladhjlahlhgadjghjahgdjlahdgjlfdgh">kdkakajhdklahklahdkladhlkahklahdfkladhhalhjladhjlahlhgadjghjahgdjlahdgjlfdgh</string>
     <string name="version_1_0">Version 1.0</string>
     <string name="change_profile_photo">Change Profile Photo</string>
     <string name="recent_post_photo">Recent Post Photo</string>
     <string name="your_recent_post">Your recent post</string>
     <string name="click_to_messages_him">Click to messges him</string>
-    <string name="messgae">Messgae</string>
     <string name="inbox">inbox</string>
     <string name="message">Message</string>
     <string name="inbox_cap">Inbox</string>
@@ -132,6 +115,5 @@
     <string name="share_with_friends">Share with friends</string>
     <string name="rs">Rs:</string>
     <string name="price">"Rs:    "</string>
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
 
 </resources>

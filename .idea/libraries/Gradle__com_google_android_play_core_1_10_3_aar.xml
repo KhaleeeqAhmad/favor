@@ -1,21 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.play:core:1.10.3@aar">
     <ANNOTATIONS>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/04d90a3fdb0cf27b02235932b62823c8/transformed/jetified-core-1.10.3/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cf78aaddc9f32655faa7dfbbd766e546/transformed/jetified-core-1.10.3/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/04d90a3fdb0cf27b02235932b62823c8/transformed/jetified-core-1.10.3/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/04d90a3fdb0cf27b02235932b62823c8/transformed/jetified-core-1.10.3/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/04d90a3fdb0cf27b02235932b62823c8/transformed/jetified-core-1.10.3/jars/classes.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5885babceff1d0f171a06c27390f75c9/transformed/core-1.10.3/annotations.zip!/" />
-    </ANNOTATIONS>
-    <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5885babceff1d0f171a06c27390f75c9/transformed/core-1.10.3/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5885babceff1d0f171a06c27390f75c9/transformed/core-1.10.3/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5885babceff1d0f171a06c27390f75c9/transformed/core-1.10.3/jars/classes.jar!/" />
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cf78aaddc9f32655faa7dfbbd766e546/transformed/jetified-core-1.10.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cf78aaddc9f32655faa7dfbbd766e546/transformed/jetified-core-1.10.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cf78aaddc9f32655faa7dfbbd766e546/transformed/jetified-core-1.10.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

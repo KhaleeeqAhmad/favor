@@ -37,7 +37,8 @@ class BuySaleFragment : Fragment() {
 
         //RecyclerView
         val recyclerView = binding.recyclerViewBuySale
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context).apply {reverseLayout = true}.apply { stackFromEnd = true}
+
         recyclerView.setHasFixedSize(true)
 
         buySaleList = ArrayList()

@@ -1,26 +1,27 @@
 package com.fyp.favorproject.mainFragment
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.fyp.favorproject.R
 import com.fyp.favorproject.adapter.MessageAdapter
 import com.fyp.favorproject.databinding.ActivityChattingBinding
 import com.fyp.favorproject.model.Message
+import com.fyp.favorproject.utill.UserHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import java.util.Calendar
-import java.util.Date
+import java.util.*
 
 class ChattingActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChattingBinding
@@ -38,6 +39,19 @@ class ChattingActivity : AppCompatActivity() {
         binding = ActivityChattingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val friendUID =intent.getStringExtra("friendUID")
+
+        receiverUid=""
+        if (friendUID != null){
+
+            receiverUid= friendUID.toString()
+
+            UserHelper.check(receiverUid)
+        }
+
+        Toast.makeText(this, "$receiverUid", Toast.LENGTH_SHORT).show()
+
         setSupportActionBar(binding.chattingToolbar)
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
@@ -47,7 +61,7 @@ class ChattingActivity : AppCompatActivity() {
         binding.tvMessageUserName.text = name
         Glide.with(this@ChattingActivity).load(profile).placeholder(R.drawable.placeholder).into(binding.ivMessageProfilePic)
         binding.ivBackButton.setOnClickListener{finish()}
-        receiverUid = intent.getStringExtra(    "uid").toString()
+//        receiverUid = intent.getStringExtra(    "uid").toString()
         senderUid = FirebaseAuth.getInstance().uid.toString()
         database.reference.child("Presence").child(receiverUid).addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -73,6 +87,7 @@ class ChattingActivity : AppCompatActivity() {
         database.reference.child("Chats").child(senderRoom).child("message")
             .addValueEventListener(object : ValueEventListener  {
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    Toast.makeText(this@ChattingActivity, "New Message", Toast.LENGTH_SHORT).show()
                     messages.clear()
                     for (snapshot1 in snapshot.children){
                         val message: Message? = snapshot1.getValue(Message::class.java)
@@ -99,7 +114,9 @@ class ChattingActivity : AppCompatActivity() {
             database.reference.child("Chats").child(receiverRoom).updateChildren(lastMsgObj)
             database.reference.child("Chats").child(senderRoom).child("message").child(randomKey!!)
                 .setValue(message).addOnSuccessListener {
-                    database.reference.child("Chats").child(receiverRoom).child("message").child(randomKey!!)
+                    database.reference.child("Chats").child(receiverRoom).child("message").child(
+                        randomKey
+                    )
                         .setValue("message").addOnSuccessListener {  }
                 }
         }
@@ -131,6 +148,9 @@ class ChattingActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
+
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

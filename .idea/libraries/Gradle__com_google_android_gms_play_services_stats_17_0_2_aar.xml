@@ -1,20 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.gms:play-services-stats:17.0.2@aar">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dbefaebb283999bb11117f51d2897ada/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dbefaebb283999bb11117f51d2897ada/transformed/jetified-play-services-stats-17.0.2/jars/classes.jar!/" />
-=======
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b00e5d5ab67e0bf7f04da0a9716c7c0c/transformed/play-services-stats-17.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b00e5d5ab67e0bf7f04da0a9716c7c0c/transformed/play-services-stats-17.0.2/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9644618ffd11c42bc3401babdff97ea2/transformed/play-services-stats-17.0.2/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9644618ffd11c42bc3401babdff97ea2/transformed/play-services-stats-17.0.2/jars/classes.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ebb182189b732fab92c9e510b6e45e4a/transformed/play-services-stats-17.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ebb182189b732fab92c9e510b6e45e4a/transformed/play-services-stats-17.0.2/AndroidManifest.xml" />
->>>>>>> 3119d0ed326eb97dd58853b1711488ddb56858c2
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/78a60b5f08dbde91a0d2ba149ddb8569/transformed/jetified-play-services-stats-17.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/78a60b5f08dbde91a0d2ba149ddb8569/transformed/jetified-play-services-stats-17.0.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-stats/17.0.2/c0d58b8efa926b2c607984c54fb3d274490badd1/play-services-stats-17.0.2-javadoc.jar!/" />

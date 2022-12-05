@@ -16,14 +16,12 @@
         android:name="com.fyp.favorproject.fragments.StoreFragment"
         android:label="fragment_store"
         tools:layout="@layout/fragment_store" />
-<<<<<<< HEAD
     <activity
         android:id="@+id/chattingActivity"
         android:name="com.fyp.favorproject.mainFragment.ChattingActivity"
         android:label="activity_chatting"
         tools:layout="@layout/activity_chatting" >
     </activity>
-=======
 
     <fragment
         android:id="@+id/notificationFragment"
@@ -31,15 +29,14 @@
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 
-    <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.fyp.favorproject.fragments.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+<!--    <fragment-->
+<!--        android:id="@+id/chatFragment"-->
+<!--        android:name="com.fyp.favorproject.mainFragment.ChatFragment"-->
+<!--        android:label="fragment_chat"-->
+<!--        tools:layout="@layout/fragment_chat" />-->
     <activity
         android:id="@+id/askFavorActivity"
         android:name="com.fyp.favorproject.activities.AskFavorActivity"
         android:label="activity_ask_favor"
         tools:layout="@layout/activity_ask_favor" />
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
 </navigation>

@@ -3,6 +3,8 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7b877e039f6096e902b70b2bf7c56396/transformed/firebase-storage-ktx-20.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7b877e039f6096e902b70b2bf7c56396/transformed/firebase-storage-ktx-20.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9f3bbdef270ae9e8c98493851a707c51/transformed/jetified-firebase-storage-ktx-20.1.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9f3bbdef270ae9e8c98493851a707c51/transformed/jetified-firebase-storage-ktx-20.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-storage-ktx/20.1.0/aa74d2974b31f0b667757c7f739b32b39a2a8818/firebase-storage-ktx-20.1.0-javadoc.jar!/" />

@@ -37,7 +37,7 @@ class LostFoundFragment : Fragment() {
 
         //RecyclerView
         val recyclerView = binding.recyclerViewLostFound
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context).apply {reverseLayout = true}.apply { stackFromEnd = true}
         recyclerView.setHasFixedSize(true)
 
         lostFoundList = ArrayList()

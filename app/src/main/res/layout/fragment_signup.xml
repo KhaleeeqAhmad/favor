@@ -71,30 +71,7 @@
             android:inputType="textShortMessage" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etRegNoSignup"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:hint="@string/registration_no"
-        app:boxCornerRadiusTopEnd="15dp"
-        app:boxCornerRadiusTopStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDepartmentUserRegister"
-        app:startIconContentDescription="Enter Full Name"
-        app:startIconDrawable="@drawable/ic_date"
-        app:startIconTint="?attr/colorPrimary">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etRegNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="date" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etEmailUserRegister"
@@ -110,7 +87,7 @@
         app:boxCornerRadiusTopStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etRegNoSignup"
+        app:layout_constraintTop_toBottomOf="@+id/etDepartmentUserRegister"
         app:startIconContentDescription="Enter Full Name"
         app:startIconDrawable="@drawable/ic_chat"
         app:startIconTint="?attr/colorPrimary">
@@ -174,13 +151,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignUpUserRegister" />
 
-<<<<<<< HEAD
-    <TextView
-        android:id="@+id/tvSignIn_alreadyuser"
-=======
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/btnSignIn"
->>>>>>> de18c9ae0f8e5b55fe8607623dad3438a769a86f
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_in"

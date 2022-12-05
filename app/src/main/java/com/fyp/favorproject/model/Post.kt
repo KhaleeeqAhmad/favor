@@ -7,5 +7,5 @@ data class Post(
     var postDescription: String? = null,
     var postTime: Long? = null,
     var itemPrice: String? = null,
-    var postLikes: Int? = null
+   // var postLikes: Int? = null
 )

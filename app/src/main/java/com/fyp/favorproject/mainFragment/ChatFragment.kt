@@ -2,6 +2,7 @@ package com.fyp.favorproject.mainFragment
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,9 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        Log.d("CCAADD", "onChatsFetched: created ")
+        Toast.makeText(requireContext(), "Created", Toast.LENGTH_SHORT).show()
+
         binding = FragmentChatBinding.inflate(inflater)
 
         database = FirebaseDatabase.getInstance()
@@ -39,13 +43,20 @@ class ChatFragment : Fragment() {
         usersArrayList = ArrayList<Users>()
 
         binding.progressBarChatFragment.visibility=View.VISIBLE
+        Log.d("CCAADD", "onChatsFetched: call back called ")
         UserHelper.getCurrentUserChats(object : ChatsCallBack{
 
             override fun onChatsFetched(chats: ArrayList<Chats>) {
+
+                Log.d("CC", "onChatsFetched: call back called ")
                 if (chats.size<=0){
-                    Toast.makeText(context, "No Chat Found", Toast.LENGTH_SHORT).show()
                     binding.progressBarChatFragment.visibility=View.GONE
+                    Log.d("CC", "onChatsFetched: No chat found ")
+
                 }else{
+
+                    Log.d("CC", "onChatsFetched: Chats found ")
+
                     usersAdapter = UsersAdapter(context?.applicationContext as Context, chats,this@ChatFragment)
 
                     binding.rvUserslistChat.adapter = usersAdapter
