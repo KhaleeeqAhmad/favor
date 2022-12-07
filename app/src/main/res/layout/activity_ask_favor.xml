@@ -16,7 +16,8 @@
         android:padding="16dp"
         android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,7 +42,8 @@
         android:src="@drawable/ic_select_file"
         app:layout_constraintBottom_toBottomOf="@+id/btnClose"
         app:layout_constraintEnd_toStartOf="@+id/btnSelectImage"
-        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+        app:layout_constraintTop_toTopOf="@+id/btnClose"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btnSelectImage"
@@ -53,7 +55,8 @@
         android:src="@drawable/ic_select_image"
         app:layout_constraintBottom_toBottomOf="@+id/btnClose"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnClose" />
+        app:layout_constraintTop_toTopOf="@+id/btnClose"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <View
         android:id="@+id/view"
@@ -106,6 +109,7 @@
         android:hint="@string/what_s_on_your_mind"
         android:inputType="textMultiLine"
         android:textColor="?android:attr/textColorSecondary"
+        android:textColorHint="#78909C"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/show_image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +129,8 @@
         app:cornerRadius="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/ivUserProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+        app:layout_constraintTop_toTopOf="@+id/ivUserProfile"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
         android:id="@+id/show_image"

@@ -53,6 +53,7 @@ class LostFoundFragment : Fragment() {
         val postData = database.reference.child("lostAndFound")
         postData.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                lostFoundList.clear()
                 if (snapshot.exists()) {
                     for (postSnaps in snapshot.children) {
                         val post = postSnaps.getValue(Post::class.java)

@@ -23,12 +23,13 @@ import com.squareup.picasso.Picasso
 class FavorAdapter(
     val context: HomeFragment,
     private val postList: ArrayList<Post>
-) : RecyclerView.Adapter<FavorAdapter.MyViewHolder>(){
+) : RecyclerView.Adapter<FavorAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_dashboard_favor, parent, false)
+                R.layout.item_dashboard_favor, parent, false
+            )
         return MyViewHolder(itemView)
     }
 
@@ -37,33 +38,41 @@ class FavorAdapter(
 
         val currentFavor = postList[position]
 
-        //PostImage
-        Picasso.get()
-            .load(currentFavor.postImage)
-            .placeholder(R.drawable.cover_photo_place_holder)
-            .into(holder.postImage)
+        if (currentFavor.postImage?.length!! > 5) {
+            //PostImage
+            Picasso.get()
+                .load(currentFavor.postImage)
+                .placeholder(R.drawable.cover_photo_place_holder)
+                .into(holder.postImage)
+        } else {
+            holder.postImage.visibility = View.GONE
+        }
 
-        @Suppress("DEPRECATION") val date = "${java.util.Date(currentFavor.postTime!!).toLocaleString().subSequence(0,11)} "
+
+        @Suppress("DEPRECATION") val date =
+            "${java.util.Date(currentFavor.postTime!!).toLocaleString().subSequence(0, 11)} "
 
         holder.postDate.text = date
 
+        holder.totalLikes.text = "${currentFavor.postLikes}"
+
         //User Data
         FirebaseDatabase.getInstance().reference.child("User").child(currentFavor.postedBy!!)
-        .addValueEventListener(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val user = snapshot.getValue(User::class.java)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val user = snapshot.getValue(User::class.java)
 
-                Picasso.get()
-                   .load(user?.userProfilePhoto)
-                    .placeholder(R.drawable.place_holder_image)
-                    .into(holder.userProfile)
-                holder.userName.text = user?.name
-                holder.userDepartment.text = user?.department
-            }
+                    Picasso.get()
+                        .load(user?.userProfilePhoto)
+                        .placeholder(R.drawable.place_holder_image)
+                        .into(holder.userProfile)
+                    holder.userName.text = user?.name
+                    holder.userDepartment.text = user?.department
+                }
 
-            override fun onCancelled(error: DatabaseError) = Unit
+                override fun onCancelled(error: DatabaseError) = Unit
 
-        })
+            })
 
         val description = currentFavor.postDescription
         if (description.equals("")) {
@@ -76,7 +85,7 @@ class FavorAdapter(
 
         holder.postResponse.setOnClickListener {
 
-            val friendUID= currentFavor.postedBy.toString()
+            val friendUID = currentFavor.postedBy.toString()
 
             val intent = Intent(context.requireContext(), ChattingActivity::class.java).apply {
                 putExtra("friendUID", friendUID)
@@ -86,25 +95,8 @@ class FavorAdapter(
         }
 
 
-
-
-//        holder.postLikes.setOnClickListener {
-//            FirebaseDatabase.getInstance().reference
-//                .child("favor").child(currentFavor.postID!!)
-//                .child("likes")
-//                .child(FirebaseAuth.getInstance().uid!!)
-//                .setValue(true).addOnSuccessListener {
-//                    FirebaseDatabase.getInstance().reference
-//                        .child("favor").child(currentFavor.postID!!)
-//                        .child("postLikes")
-//                        .setValue(currentFavor.postLikes?.plus(1)).addOnSuccessListener {
-//                            holder.postLikes.setCompoundDrawablesWithIntrinsicBounds(0,0,R.drawable.ic_post_liked,0)
-//                            holder.postLikes.setTextColor(R.color.my_blue_primary)
-//                            holder.totalLikes.text = currentFavor.postLikes.toString()
-//                        }
-//                }
-//        }
-
+        holder.postLikes.setOnClickListener {
+        }
     }
 
     override fun getItemCount() = postList.size
@@ -113,17 +105,15 @@ class FavorAdapter(
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val userProfile: ImageView = itemView.findViewById(R.id.ivUserProfile)
-        val userName : TextView = itemView.findViewById(R.id.tvUserName)
+        val userName: TextView = itemView.findViewById(R.id.tvUserName)
         val userDepartment: TextView = itemView.findViewById(R.id.tvUserDepartment)
         val postDate: TextView = itemView.findViewById(R.id.tvPostTime)
-        val postDescription : TextView = itemView.findViewById(R.id.etPostDescription)
+        val postDescription: TextView = itemView.findViewById(R.id.etPostDescription)
         val postImage: ImageView = itemView.findViewById(R.id.ivPostImage)
         val postLikes: TextView = itemView.findViewById(R.id.btnLike)
         val postResponse: TextView = itemView.findViewById(R.id.btnRespond)
         val postShare: TextView = itemView.findViewById(R.id.btnShare)
         val totalLikes: TextView = itemView.findViewById(R.id.tvLikes)
-
-
 
 
     }

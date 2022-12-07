@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fyp.favorproject.adapter.UsersAdapter
 import com.fyp.favorproject.databinding.FragmentChatBinding
-import com.fyp.favorproject.model.Chats
 import com.fyp.favorproject.model.Users
 import com.fyp.favorproject.utill.ChatsCallBack
 import com.fyp.favorproject.utill.UserHelper
@@ -40,13 +39,13 @@ class ChatFragment : Fragment() {
 
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
-        usersArrayList = ArrayList<Users>()
+        usersArrayList = ArrayList()
 
         binding.progressBarChatFragment.visibility=View.VISIBLE
         Log.d("CCAADD", "onChatsFetched: call back called ")
         UserHelper.getCurrentUserChats(object : ChatsCallBack{
 
-            override fun onChatsFetched(chats: ArrayList<Chats>) {
+            override fun onChatsFetched(chats: ArrayList<String>) {
 
                 Log.d("CC", "onChatsFetched: call back called ")
                 if (chats.size<=0){

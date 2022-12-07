@@ -27,7 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="64dp"
-        android:hint="@string/name"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_error"
+        android:hint="@string/full_name"
         app:boxCornerRadiusTopEnd="15dp"
         app:boxCornerRadiusTopStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +38,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitleUserRegister"
         app:startIconContentDescription="Enter Full Name"
         app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="?attr/colorPrimary">
+        app:startIconTint="?attr/colorPrimary"
+        app:endIconMode="clear_text">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/userNameUR"
             android:layout_width="match_parent"
@@ -47,12 +51,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etDepartmentUserRegister"
-        style="?attr/textInputFilledStyle"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/department"
         app:boxCornerRadiusTopEnd="15dp"
@@ -63,15 +66,86 @@
         app:startIconContentDescription="Enter Full Name"
         app:startIconDrawable="@drawable/ic_department"
         app:startIconTint="?attr/colorPrimary">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/etDepartment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textShortMessage" />
+            android:inputType="none"
+            tools:ignore="LabelFor" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etYearUserRegister"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/batch"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDepartmentUserRegister"
+        app:startIconContentDescription="Enter Full Name">
 
+        <AutoCompleteTextView
+            android:id="@+id/etYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="@string/sp19"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etDisciplineUserRegister"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/discipline"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/etRegNumUserRegister"
+        app:layout_constraintStart_toEndOf="@+id/etYearUserRegister"
+        app:layout_constraintTop_toTopOf="@+id/etYearUserRegister"
+        app:startIconContentDescription="Enter Full Name">
+
+        <AutoCompleteTextView
+            android:id="@+id/etDiscipline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="@string/bcs"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etRegNumUserRegister"
+        style="@style/Widget.Material3.TextInputLayout.FilledBox"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/reg_no"
+        app:errorEnabled="true"
+        app:counterEnabled="true"
+        app:counterMaxLength="3"
+        app:errorIconDrawable="@drawable/ic_error"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusTopStart="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etDisciplineUserRegister"
+        app:startIconContentDescription="Enter Full Name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRegNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:text="@string/_027"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etEmailUserRegister"
@@ -80,23 +154,25 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="@string/enter_your_cui_email"
+        android:hint="@string/cui_email"
         app:boxCornerRadiusTopEnd="15dp"
         app:boxCornerRadiusTopStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDepartmentUserRegister"
+        app:layout_constraintTop_toBottomOf="@+id/etRegNumUserRegister"
         app:startIconContentDescription="Enter Full Name"
         app:startIconDrawable="@drawable/ic_chat"
-        app:startIconTint="?attr/colorPrimary">
+        app:startIconTint="?attr/colorPrimary"
+        android:enabled="false"
+        app:suffixText="@string/cui_mail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailRU"
             android:layout_width="match_parent"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
