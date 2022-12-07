@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.net.toUri
 import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.ActivityAskFavorBinding
 import com.fyp.favorproject.model.Post
@@ -44,7 +45,7 @@ class AskFavorActivity : AppCompatActivity() {
 
     private val pdf = 0
     private val image = 1
-    private lateinit var imageUri: Uri
+    private var imageUri: Uri = "".toUri()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +71,6 @@ class AskFavorActivity : AppCompatActivity() {
 
         binding.etPostDescription.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 val description = binding.etPostDescription.text.toString()
@@ -156,14 +156,40 @@ class AskFavorActivity : AppCompatActivity() {
 
                 }
             }
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
+            override fun onCancelled(error: DatabaseError) = Unit
 
         })
     }
 
     private fun uploadPost() {
+
+
+        if (imageUri.toString().length<5){
+        // post has no image
+            dialog.show()
+            val postImageRef = storage.reference
+                .child("favor")
+                .child(auth.uid!!)
+                .child(Date().time.toString())
+
+            val postUploadData = Post()
+            postUploadData.postImage = ""
+            postUploadData.postedBy = auth.uid
+            postUploadData.postDescription = binding.etPostDescription.text.toString()
+            postUploadData.postTime = Date().time
+            database.reference
+                .child("favor")
+                .push()
+                .setValue(postUploadData)
+                .addOnSuccessListener {
+                    dialog.dismiss()
+                    Toast.makeText(
+                        this@AskFavorActivity,
+                        "Post posted Successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
 
         if (binding.btnSelectPostType.text.equals(options[0])) {
             dialog.show()
@@ -269,19 +295,22 @@ class AskFavorActivity : AppCompatActivity() {
             if (requestCode == image) {
                 imageUri = data?.data!!
                 binding.showImage.setImageURI(imageUri)
+
+                binding.showImage.visibility = View.VISIBLE
+                binding.btnPost.isEnabled = true
+                binding.btnPost.background =
+                    AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
+                binding.btnPost.setTextColor(resources.getColor(R.color.white))
             }
             if (requestCode == pdf) {
                 imageUri = data?.data!!
                 binding.showImage.setImageURI(imageUri)
+                binding.showImage.visibility = View.VISIBLE
+                binding.btnPost.isEnabled = true
+                binding.btnPost.background =
+                    AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
+                binding.btnPost.setTextColor(resources.getColor(R.color.white))
             }
-            binding.showImage.visibility = View.VISIBLE
-            binding.btnPost.isEnabled = true
-            binding.btnPost.background= AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
-            binding.btnPost.setTextColor(resources.getColor(R.color.white))
         }
-
-    }
-    private fun delPost(){
-
     }
 }

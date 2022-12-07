@@ -95,7 +95,4 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
 
     implementation 'com.squareup.picasso:picasso:2.71828'
-
-
-
 }

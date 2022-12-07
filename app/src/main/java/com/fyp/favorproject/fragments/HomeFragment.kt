@@ -45,27 +45,23 @@ class HomeFragment : Fragment() {
         postList = ArrayList()
 
         getPostData()
-
         return binding.root
     }
 
     private fun getPostData() {
-
         binding.recyclerViewPosts.visibility = View.GONE
 
         val postData = database.reference.child("favor")
         postData.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                postList.clear()
                 if (snapshot.exists()) {
                     for (postSnaps in snapshot.children) {
                         val post = postSnaps.getValue(Post::class.java)
-                        if (post != null) {
-                            post.postID = postSnaps.key
-                        }
                         postList.add(post!!)
                     }
                 }
-                val userAdapter = FavorAdapter(this@HomeFragment, postList)
+                val userAdapter = FavorAdapter(context = HomeFragment(), postList)
                 binding.recyclerViewPosts.adapter = userAdapter
                 binding.recyclerViewPosts.visibility = View.VISIBLE
             }
@@ -73,5 +69,4 @@ class HomeFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) = Unit
         })
     }
-
 }

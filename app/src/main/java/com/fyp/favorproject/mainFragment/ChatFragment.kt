@@ -39,7 +39,7 @@ class ChatFragment : Fragment() {
 
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
-        usersArrayList = ArrayList<Users>()
+        usersArrayList = ArrayList()
 
         binding.progressBarChatFragment.visibility=View.VISIBLE
         Log.d("CCAADD", "onChatsFetched: call back called ")
@@ -56,7 +56,7 @@ class ChatFragment : Fragment() {
 
                     Log.d("CC", "onChatsFetched: Chats found ")
 
-                    usersAdapter = UsersAdapter(context?.applicationContext as Context, chats,this@ChatFragment)
+                    usersAdapter = UsersAdapter(context?.applicationContext as Context,     chats,this@ChatFragment)
 
                     binding.rvUserslistChat.adapter = usersAdapter
                     binding.progressBarChatFragment.visibility=View.GONE

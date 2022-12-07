@@ -15,7 +15,7 @@
     <string name="sign_up">Sign up</string>
     <string name="new_post">New Post</string>
     <string name="notifications">Notifications</string>
-    <string name="sign_in">Sign in</string>
+    <string name="sign_in"> Sign in</string>
     <string name="search">Search</string>
     <string name="favor">Favor</string>
     <string name="store_topbar">Store</string>
@@ -115,5 +115,58 @@
     <string name="share_with_friends">Share with friends</string>
     <string name="rs">Rs:</string>
     <string name="price">"Rs:    "</string>
+    <string name="full_name">Full Name</string>
+    <string name="computer_science">Computer Science</string>
+    <string name="suffix">\@students.cuisahiwal.edu.pk</string>
+    <string name="cui_email">CUI Email</string>
+    <string name="cui_mail">\@students.cuisahiwal.edu.pk</string>
+    <string name="batch">Batch</string>
+    <string name="sp19">SP19</string>
+    <string name="bcs">BCS</string>
+    <string name="discipline">Discipline</string>
+    <string name="_027">027</string>
+    <string name="reg_no">Reg No.</string>
+
+    <string-array name="Departments">
+       <item>Computer Science</item>
+       <item>Mechanical Engineering</item>
+       <item>Electrical and Computer Engineering</item>
+       <item>Civil Engineering</item>
+       <item>Biosciences</item>
+       <item>Mathematics</item>
+       <item>Management Sciences</item>
+       <item>Heritage Studies</item>
+    </string-array>
+
+    <string-array name="Year">
+        <item>SP19</item>
+        <item>FA19</item>
+        <item>SP20</item>
+        <item>FA20</item>
+        <item>SP21</item>
+        <item>FA21</item>
+        <item>SP22</item>
+        <item>FA22</item>
+    </string-array>
+
+    <string-array name="Discipline">
+        <item>BAF</item>
+        <item>BBA</item>
+        <item>BBC</item>
+        <item>BCS</item>
+        <item>BEE</item>
+        <item>BEN</item>
+        <item>BME</item>
+        <item>BSE</item>
+        <item>BSI</item>
+        <item>CVE</item>
+        <item>FSN</item>
+        <item>MB4</item>
+        <item>RBS</item>
+        <item>RCS</item>
+        <item>RMM</item>
+        <item>RMS</item>
+        <item>RMT</item>
+    </string-array>
 
 </resources>

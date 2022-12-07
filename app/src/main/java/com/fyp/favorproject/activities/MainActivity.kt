@@ -1,8 +1,9 @@
 package com.fyp.favorproject.activities
 
-
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -27,9 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -40,8 +38,8 @@ class MainActivity : AppCompatActivity() {
         setupNavigation()
     }
 
-
     // Bottom Navigation Setup.
+    @SuppressLint("SetTextI18n")
     private fun setupNavigation() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentHolder) as NavHostFragment
@@ -54,27 +52,50 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, AskFavorActivity::class.java)
                 startActivity(intent)
             }
-        }
-        binding.appBarHome.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.btnLogout -> {
-                    auth.signOut()
-                   this@MainActivity.finish()
-                    true
+            if (destination.id == R.id.storeFragment) {
+                binding.searchViewHome.visibility = View.GONE
+                binding.fragmentName.visibility = View.VISIBLE
+                binding.fragmentName.text = "Store"
+            }
+            if (destination.id == R.id.notificationFragment) {
+                binding.searchViewHome.visibility = View.GONE
+                binding.fragmentName.visibility = View.VISIBLE
+                binding.fragmentName.text = "Notifications"
+            }
+            if (destination.id == R.id.homeFragment) {
+                binding.searchViewHome.visibility = View.VISIBLE
+                binding.fragmentName.visibility = View.GONE
+            }
+            if (destination.id == R.id.chatFragment) {
+                binding.searchViewHome.visibility = View.GONE
+                binding.fragmentName.visibility = View.VISIBLE
+                binding.fragmentName.text = "Chats"
+            }
+            binding.appBarHome.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.btnLogout -> {
+                        auth.signOut()
+                        this@MainActivity.finish()
+                        val intent = Intent(this@MainActivity, AuthenticationActivity::class.java)
+                        startActivity(intent)
+
+                        true
+                    }
+                    else -> false
                 }
-                else -> false
+            }
+            binding.btnGotoUserProfile.setOnClickListener {
+                val intent = Intent(this@MainActivity, UserProfileActivity::class.java)
+                startActivity(intent)
+            }
+
+            binding.searchViewHome.setOnClickListener {
+                val intent = Intent(this@MainActivity, SearchActivity::class.java)
+                startActivity(intent)
             }
         }
-        binding.btnGotoUserProfile.setOnClickListener {
-            val intent = Intent(this@MainActivity, UserProfileActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.searchViewHome.setOnClickListener {
-            val intent = Intent(this@MainActivity, SearchActivity::class.java)
-            startActivity(intent)
-        }
     }
+
     override fun onStart() {
         super.onStart()
         val profilePhoto = object : ValueEventListener {
@@ -92,6 +113,5 @@ class MainActivity : AppCompatActivity() {
         }
         database.reference.child("User").child(auth.uid!!).addValueEventListener(profilePhoto)
     }
-
 }
 
