@@ -6,3 +6,5 @@ local.properties
 *.idea
 *.lock
 /.gradle/7.5/checksums/*
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/file-system.probe

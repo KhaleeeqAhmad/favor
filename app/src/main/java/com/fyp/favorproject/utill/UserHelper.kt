@@ -19,10 +19,9 @@ class UserHelper {
 
 
             val currentUser = auth.currentUser
-            var chats: ArrayList<String> = ArrayList()
+            val chats: ArrayList<String> = ArrayList()
 
-
-                Log.d("CCAADD", "getCurrentUserChats:called ")
+            Log.d("CCAADD", "getCurrentUserChats:called ")
             database.reference.child("User").child(currentUser!!.uid).child("chats").get().addOnCompleteListener {
 
                  if (it.isSuccessful){
@@ -32,7 +31,7 @@ class UserHelper {
 
                          for (i in it.result.children) {
                              val c = i.value.toString()
-                             chats.add(c!!)
+                             chats.add(c)
                          }
 
                      }
@@ -66,7 +65,7 @@ class UserHelper {
                         if (it.result.exists()) {
                             var flag = false
                             for (i in it.result.children) {
-                                var c = i.getValue(Chats::class.java)
+                                val c = i.getValue(Chats::class.java)
                                 if (c!!.friendUID == friendUID) {
                                     Log.d(
                                         "UserHelper",
@@ -131,7 +130,7 @@ class UserHelper {
 
                         for (i in it.result.children) {
                             val c = i.value.toString()
-                            chats.add(c!!)
+                            chats.add(c)
                         }
 
                     }
