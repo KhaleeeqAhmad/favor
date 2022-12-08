@@ -11,13 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.fyp.favorproject.R
 import com.fyp.favorproject.fragments.HomeFragment
 import com.fyp.favorproject.mainFragment.ChattingActivity
+import com.fyp.favorproject.model.Notification
 import com.fyp.favorproject.model.Post
 import com.fyp.favorproject.model.User
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
+import java.util.*
 
 
 class FavorAdapter(
@@ -50,11 +53,10 @@ class FavorAdapter(
 
 
         @Suppress("DEPRECATION") val date =
-            "${java.util.Date(currentFavor.postTime!!).toLocaleString().subSequence(0, 11)} "
+            "${Date(currentFavor.postTime!!).toLocaleString().subSequence(0, 11)} "
 
         holder.postDate.text = date
-
-        holder.totalLikes.text = "${currentFavor.postLikes}"
+        holder.postLikes.text = "${currentFavor.postLikes}"
 
         //User Data
         FirebaseDatabase.getInstance().reference.child("User").child(currentFavor.postedBy!!)
@@ -84,20 +86,74 @@ class FavorAdapter(
 
 
         holder.postResponse.setOnClickListener {
-
             val friendUID = currentFavor.postedBy.toString()
-
             val intent = Intent(context.requireContext(), ChattingActivity::class.java).apply {
                 putExtra("friendUID", friendUID)
             }
-
             context.startActivity(intent)
         }
 
 
-        holder.postLikes.setOnClickListener {
-        }
+        // Like Functionality
+        FirebaseDatabase.getInstance().reference
+            .child("favor")
+            .child(currentFavor.postID)
+            .child("likes")
+            .child(FirebaseAuth.getInstance().uid!!)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    if (snapshot.exists()) {
+                        holder.postLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_post_liked, 0, 0, 0)
+                        holder.postLikes.setTextColor(R.color.my_blue_primary)
+                    } else {
+                        holder.postLikes.setOnClickListener {
+                            FirebaseDatabase.getInstance().reference
+                                .child("favor")
+                                .child(currentFavor.postID)
+                                .child("likes")
+                                .child(FirebaseAuth.getInstance().uid!!)
+                                .setValue(true).addOnSuccessListener {
+                                    FirebaseDatabase.getInstance().reference
+                                        .child("favor")
+                                        .child(currentFavor.postID)
+                                        .child("postLikes")
+                                        .setValue(currentFavor.postLikes.plus(1))
+                                        .addOnSuccessListener {
+                                            holder.postLikes.setCompoundDrawablesWithIntrinsicBounds(
+                                                R.drawable.ic_post_liked,
+                                                0,
+                                                0,
+                                                0
+                                            )
+                                            holder.postLikes.setTextColor(R.color.my_blue_primary)
+
+                                            val notification = Notification()
+                                            notification.notificationBy =
+                                                FirebaseAuth.getInstance().uid
+                                            notification.notificationTime = Date().time
+                                            notification.postID = currentFavor.postID
+                                            notification.postedBy = currentFavor.postedBy
+                                            notification.notificationType = "like"
+
+
+                                            FirebaseDatabase.getInstance().reference
+                                                .child("notification")
+                                                .child(currentFavor.postedBy!!)
+                                                .push()
+                                                .setValue(notification)
+
+                                        }
+                                }
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) = Unit
+            })
+
     }
+
 
     override fun getItemCount() = postList.size
 
@@ -113,8 +169,6 @@ class FavorAdapter(
         val postLikes: TextView = itemView.findViewById(R.id.btnLike)
         val postResponse: TextView = itemView.findViewById(R.id.btnRespond)
         val postShare: TextView = itemView.findViewById(R.id.btnShare)
-        val totalLikes: TextView = itemView.findViewById(R.id.tvLikes)
-
 
     }
 }

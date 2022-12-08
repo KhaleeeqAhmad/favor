@@ -1,7 +1,7 @@
 package com.fyp.favorproject.model
 
 data class Post(
-    var postID: String? = null,
+    var postID: String = "",
     var postImage: String? = null,
     var postedBy: String? = null,
     var postDescription: String? = null,

@@ -126,6 +126,7 @@
     <string name="discipline">Discipline</string>
     <string name="_027">027</string>
     <string name="reg_no">Reg No.</string>
+    <string name="_0">0</string>
 
     <string-array name="Departments">
        <item>Computer Science</item>

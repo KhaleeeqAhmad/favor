@@ -37,6 +37,7 @@ class HomeFragment : Fragment() {
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
 
+
         //RecyclerView
         val recyclerView = binding.recyclerViewPosts
         recyclerView.layoutManager = LinearLayoutManager(context).apply {reverseLayout = true}.apply { stackFromEnd = true}
@@ -58,6 +59,7 @@ class HomeFragment : Fragment() {
                 if (snapshot.exists()) {
                     for (postSnaps in snapshot.children) {
                         val post = postSnaps.getValue(Post::class.java)
+                        post?.postID = postSnaps.key.toString()
                         postList.add(post!!)
                     }
                 }
