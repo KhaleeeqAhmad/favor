@@ -15,6 +15,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.net.toUri
 import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.ActivityAskFavorBinding
+import com.fyp.favorproject.model.Notification
 import com.fyp.favorproject.model.Post
 import com.fyp.favorproject.model.User
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -43,7 +44,6 @@ class AskFavorActivity : AppCompatActivity() {
     private var selectedOption = options[selectedOptionIndex]
 
 
-    private val pdf = 0
     private val image = 1
     private var imageUri: Uri = "".toUri()
 
@@ -97,13 +97,6 @@ class AskFavorActivity : AppCompatActivity() {
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(Intent.createChooser(intent,"Select IMAGE"),image)
             }
-
-        binding.btnSelectDocument.setOnClickListener {
-            val intent = Intent()
-            intent.type="application/pdf"
-            intent.action = Intent.ACTION_GET_CONTENT
-            startActivityForResult(Intent.createChooser(intent,"Select PDF"),pdf)
-        }
 
         binding.btnPost.setOnClickListener {
             uploadPost()
@@ -217,6 +210,13 @@ class AskFavorActivity : AppCompatActivity() {
                                     "Post posted Successfully",
                                     Toast.LENGTH_SHORT
                                 ).show()
+
+                                val notification = Notification()
+                                notification.notificationBy = FirebaseAuth.getInstance().uid
+                                notification.notificationTime = Date().time
+                                notification.postID = postUploadData.postID
+                                notification.postedBy = postUploadData.postedBy
+                                notification.notificationType = " favor"
                             }
                     }
             }
@@ -296,15 +296,6 @@ class AskFavorActivity : AppCompatActivity() {
                 imageUri = data?.data!!
                 binding.showImage.setImageURI(imageUri)
 
-                binding.showImage.visibility = View.VISIBLE
-                binding.btnPost.isEnabled = true
-                binding.btnPost.background =
-                    AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
-                binding.btnPost.setTextColor(resources.getColor(R.color.white))
-            }
-            if (requestCode == pdf) {
-                imageUri = data?.data!!
-                binding.showImage.setImageURI(imageUri)
                 binding.showImage.visibility = View.VISIBLE
                 binding.btnPost.isEnabled = true
                 binding.btnPost.background =
