@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso
 
 class MessageAdapter(
     var context: Context,
-    messages: ArrayList<Message>?,
+    mMessages: ArrayList<Message>?,
     senderRoom: String,
     receiverRoom: String
 ):RecyclerView.Adapter<RecyclerView.ViewHolder?>()
@@ -24,6 +24,14 @@ class MessageAdapter(
     val ITEM_RECEIVED = 2
     val senderRoom: String
     val receiverRoom: String
+
+    init {
+        if (mMessages != null) {
+            this.messages = mMessages!!
+        }
+        this.senderRoom = senderRoom
+        this.receiverRoom = receiverRoom
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -48,6 +56,7 @@ class MessageAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val message = messages[position]
+
         if (holder.javaClass == SendMsgHolder::class.java){
             val viewHolder = holder as  SendMsgHolder
             if (message.message.equals("photo")){
@@ -60,6 +69,19 @@ class MessageAdapter(
             viewHolder.itemView.setOnClickListener{
 
             }
+        }else{
+            val viewHolder = holder as  ReceiveMsgHolder
+            if (message.message.equals("photo")){
+                viewHolder.binding.image.visibility = View.VISIBLE
+                viewHolder.binding.message.visibility = View.VISIBLE
+                viewHolder.binding.mLinear.visibility = View.VISIBLE
+                Picasso.get().load(message.imageUrl).placeholder(R.drawable.placeholder).into(holder.binding.image)
+            }
+            viewHolder.binding.message.text = message.message
+            viewHolder.itemView.setOnClickListener{
+
+            }
+
         }
     }
 
@@ -72,13 +94,7 @@ class MessageAdapter(
         var binding: ReceivedMsgBinding = ReceivedMsgBinding.bind(itemView)
     }
 
-    init {
-        if (messages != null) {
-            this.messages = messages
-        }
-        this.senderRoom = senderRoom
-        this.receiverRoom = receiverRoom
-    }
+
 
 
 }

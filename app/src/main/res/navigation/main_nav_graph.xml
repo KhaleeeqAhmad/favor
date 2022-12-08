@@ -29,11 +29,11 @@
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/chatFragment"-->
-<!--        android:name="com.fyp.favorproject.mainFragment.ChatFragment"-->
-<!--        android:label="fragment_chat"-->
-<!--        tools:layout="@layout/fragment_chat" />-->
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.fyp.favorproject.mainFragment.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
     <activity
         android:id="@+id/askFavorActivity"
         android:name="com.fyp.favorproject.activities.AskFavorActivity"

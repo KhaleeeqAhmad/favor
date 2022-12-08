@@ -2,6 +2,7 @@ package com.fyp.favorproject.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +11,14 @@ import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.ChatRowItemBinding
 import com.fyp.favorproject.mainFragment.ChatFragment
 import com.fyp.favorproject.mainFragment.ChattingActivity
+import com.fyp.favorproject.model.Chats
 import com.squareup.picasso.Picasso
 
 class UsersAdapter(
     val context: Context,
-    private val usersArrayList: ArrayList<String>,
-    private val parentFrag:ChatFragment
-                   ) :
+    private val usersArrayList: ArrayList<Chats>,
+    private val parentFrag: ChatFragment
+) :
     RecyclerView.Adapter<UsersAdapter.UserViewHolder>() {
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,26 +33,29 @@ class UsersAdapter(
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = usersArrayList[position]
-//        holder.binding.tvUsernameChatsitem.text = item.friendName
-//        holder.binding.tvLastmessaageChatsitem.text = item.lastMessage
-//        Picasso.get().load(item.friendProfileURI).placeholder(R.drawable.avataar)
-//            .into(holder.binding.ivProfilePicChatsitem)
-//
-//        holder.itemView.setOnClickListener {
-//            val intent = Intent(context, ChattingActivity::class.java)
-//            intent.putExtra("name", item.friendName)
-//            intent.putExtra("picture", item.friendProfileURI)
-//            intent.putExtra("uid", item.friendUID)
-//            parentFrag.requireContext().startActivity(intent)
+        holder.binding.tvUsernameChatsitem.text = item.friendName
+        holder.binding.tvLastmessaageChatsitem.text = item.lastMessage
+
+        try {
+
+            Picasso.get().load(item.friendProfileURI).placeholder(R.drawable.avataar)
+                .into(holder.binding.ivProfilePicChatsitem)
+
+        }catch (e:Exception){
+            Log.d("qqq", "onBindViewHolder: ${e.message}")
+        }
+
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ChattingActivity::class.java)
-//           intent.putExtra("name", item.friendName)
-//           intent.putExtra("picture", item.friendProfileURI)
-//           intent.putExtra("uid", item.friendUID)
+            intent.putExtra("name", item.friendName)
+            intent.putExtra("picture", item.friendProfileURI)
+            intent.putExtra("friendUID", item.friendUID)
+            Log.d("UUSSEERR", "onBindViewHolder:  ${item.friendUID}")
             parentFrag.requireContext().startActivity(intent)
 
         }
     }
+
     override fun getItemCount(): Int = usersArrayList.size
 }

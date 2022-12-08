@@ -77,6 +77,8 @@
             android:layout_height="wrap_content"
             android:visibility="visible"  />
 
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -168,6 +170,12 @@
             tools:ignore="ContentDescription,ImageContrastCheck" />
 
     </LinearLayout>
-
-
+    <ProgressBar
+        android:id="@+id/progressBar_ChattingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginEnd="363dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="210dp"></ProgressBar>
 </RelativeLayout>

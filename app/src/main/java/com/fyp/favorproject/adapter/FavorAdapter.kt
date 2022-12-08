@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.fyp.favorproject.R
 import com.fyp.favorproject.fragments.HomeFragment
 import com.fyp.favorproject.mainFragment.ChattingActivity
 import com.fyp.favorproject.model.Post
 import com.fyp.favorproject.model.User
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -85,9 +87,14 @@ class FavorAdapter(
 
         holder.postResponse.setOnClickListener {
 
+            if (currentFavor.postedBy.toString() == FirebaseAuth.getInstance().uid!!){
+                Toast.makeText(context.requireContext(), "You can't response to your post", Toast.LENGTH_SHORT).show()
+            return@setOnClickListener
+            }
+
             val friendUID = currentFavor.postedBy.toString()
 
-            val intent = Intent(context.requireContext(), ChattingActivity::class.java).apply {
+            val intent = Intent(context?.requireContext(), ChattingActivity::class.java).apply {
                 putExtra("friendUID", friendUID)
             }
 

@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fyp.favorproject.adapter.UsersAdapter
 import com.fyp.favorproject.databinding.FragmentChatBinding
+import com.fyp.favorproject.model.Chats
+import com.fyp.favorproject.model.User
 import com.fyp.favorproject.model.Users
 import com.fyp.favorproject.utill.ChatsCallBack
 import com.fyp.favorproject.utill.UserHelper
@@ -45,7 +47,7 @@ class ChatFragment : Fragment() {
         Log.d("CCAADD", "onChatsFetched: call back called ")
         UserHelper.getCurrentUserChats(object : ChatsCallBack{
 
-            override fun onChatsFetched(chats: ArrayList<String>) {
+            override fun onChatsFetched(chats: ArrayList<Chats>) {
 
                 Log.d("CC", "onChatsFetched: call back called ")
                 if (chats.size<=0){
@@ -56,7 +58,7 @@ class ChatFragment : Fragment() {
 
                     Log.d("CC", "onChatsFetched: Chats found ")
 
-                    usersAdapter = UsersAdapter(context?.applicationContext as Context,     chats,this@ChatFragment)
+                    usersAdapter = UsersAdapter(context?.applicationContext as Context, chats,this@ChatFragment)
 
                     binding.rvUserslistChat.adapter = usersAdapter
                     binding.progressBarChatFragment.visibility=View.GONE
@@ -64,9 +66,11 @@ class ChatFragment : Fragment() {
                 }
             }
 
+            override fun onFriendsMetaDataFetched(friend: User) = Unit
+
         })
 
-     //   usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList)
+        //   usersAdapter = UsersAdapter(context?.applicationContext as Context, usersArrayList)
 //
 //
 //        database.reference.child("User").child(auth.uid.toString()).addValueEventListener(object : ValueEventListener{
@@ -76,7 +80,7 @@ class ChatFragment : Fragment() {
 //
 //            override fun onCancelled(error: DatabaseError) {}
 //        })
-
+//
 //        database.reference.child("User").addValueEventListener(object: ValueEventListener{
 //           // @SuppressLint("NotifyDataSetChanged")
 //            override fun onDataChange(snapshot: DataSnapshot) {

@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var storage: FirebaseStorage
     private lateinit var database: FirebaseDatabase
     private lateinit var postList: ArrayList<Post>
-
+    private lateinit var currentInstance : HomeFragment
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -44,7 +44,9 @@ class HomeFragment : Fragment() {
 
         postList = ArrayList()
 
+        HomeFragment()
         getPostData()
+        currentInstance= this
         return binding.root
     }
 
@@ -57,11 +59,13 @@ class HomeFragment : Fragment() {
                 postList.clear()
                 if (snapshot.exists()) {
                     for (postSnaps in snapshot.children) {
+
+
                         val post = postSnaps.getValue(Post::class.java)
                         postList.add(post!!)
                     }
                 }
-                val userAdapter = FavorAdapter(context = HomeFragment(), postList)
+                val userAdapter = FavorAdapter(currentInstance, postList)
                 binding.recyclerViewPosts.adapter = userAdapter
                 binding.recyclerViewPosts.visibility = View.VISIBLE
             }
