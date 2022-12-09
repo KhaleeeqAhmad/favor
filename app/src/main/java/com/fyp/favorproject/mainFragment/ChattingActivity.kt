@@ -139,6 +139,14 @@ class ChattingActivity : AppCompatActivity() {
                             database.reference.child("Presence").child(senderUid).setValue("Typing")
                             handler.removeCallbacksAndMessages(null)
                             handler.postDelayed(userStoppedTyping, 1000)
+                            if (binding.etMessageBox.text.toString().isEmpty()){
+                                binding.ivSendBtn.isEnabled=false
+
+                                binding.ivSendBtn.setImageDrawable(getDrawable(R.drawable.ic_send_disabled))
+                            }else{
+                                binding.ivSendBtn.isEnabled=true
+                                binding.ivSendBtn.setImageDrawable(getDrawable(R.drawable.ic_send))
+                            }
                         }
                         val userStoppedTyping = Runnable {
                             database.reference.child("Presence").child(senderUid).setValue("Online")

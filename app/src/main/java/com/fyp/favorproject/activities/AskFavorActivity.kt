@@ -37,7 +37,7 @@ class AskFavorActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var dialog: ProgressDialog
 
-     //  Dialog post
+    //  Dialog post
 
     private var selectedOptionIndex  = 0
     private val options = arrayOf("Favor", "Buy & Sale", "Lost & found")
@@ -96,7 +96,7 @@ class AskFavorActivity : AppCompatActivity() {
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(Intent.createChooser(intent,"Select IMAGE"),image)
-            }
+        }
 
         binding.btnPost.setOnClickListener {
             uploadPost()
@@ -158,7 +158,7 @@ class AskFavorActivity : AppCompatActivity() {
 
 
         if (imageUri.toString().length<5){
-        // post has no image
+            // post has no image
             dialog.show()
             val postImageRef = storage.reference
                 .child("favor")

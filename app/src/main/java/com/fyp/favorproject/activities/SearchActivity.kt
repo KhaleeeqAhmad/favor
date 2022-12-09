@@ -1,11 +1,14 @@
 package com.fyp.favorproject.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fyp.favorproject.adapter.SearchUserAdapter
 import com.fyp.favorproject.databinding.ActivitySearchBinding
+import com.fyp.favorproject.mainFragment.ChattingActivity
 import com.fyp.favorproject.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -55,7 +58,7 @@ class SearchActivity : AppCompatActivity() {
                             userList.add(userData)
                         }
                     }
-                    val userAdapter = SearchUserAdapter(userList)
+                    val userAdapter = SearchUserAdapter(userList, messageListener)
                     binding.rvSearchUser.adapter = userAdapter
                     binding.rvSearchUser.visibility = View.VISIBLE
                 }
@@ -65,4 +68,18 @@ class SearchActivity : AppCompatActivity() {
 
         })
     }
+    val messageListener = fun(friendUID: String){
+
+
+            if (friendUID == FirebaseAuth.getInstance().uid!!){
+                Toast.makeText(this, "You can't Message this user", Toast.LENGTH_SHORT).show()
+                return
+            }
+            val intent = Intent(this, ChattingActivity::class.java).apply {
+                putExtra("friendUID", friendUID)
+            }
+            startActivity(intent)
+
+    }
+
 }

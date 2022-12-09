@@ -41,16 +41,15 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:visibility="gone"/>
-
             <TextView
                 android:id="@+id/searchViewHome"
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
-                android:background="@drawable/border"
+                app:background="@drawable/border"
                 android:gravity="center_vertical"
                 android:hint="@string/search_favor"
-                android:paddingHorizontal="5dp"
-                android:textColorHint="#8D6E63" />
+                android:paddingHorizontal="5dp" />
+
 
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>

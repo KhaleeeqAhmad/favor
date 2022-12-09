@@ -31,6 +31,8 @@
     <color name="green">#00C980</color>
     <color name="colorEditTextBg">#f2f5fa</color>
     <color name="colorEditTextBorder">#e9ebef</color>
+    <color name="textHint">#8D6E63</color>
+
 
     <color name="seed">#1764FF</color>
     <color name="md_theme_light_primary">#0052DD</color>
