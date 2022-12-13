@@ -77,7 +77,7 @@ class AskFavorActivity : AppCompatActivity() {
                 val description = binding.etPostDescription.text.toString()
                 val image = binding.showImage.isInLayout
 
-                if (description.isNotEmpty() && image){
+                if (description.isNotEmpty() || image){
                     binding.btnPost.isEnabled = true
                     binding.btnPost.background= AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
                     binding.btnPost.setTextColor(resources.getColor(R.color.white))
