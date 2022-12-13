@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -76,7 +77,7 @@ class AskFavorActivity : AppCompatActivity() {
                 val description = binding.etPostDescription.text.toString()
                 val image = binding.showImage.isInLayout
 
-                if (description.isNotEmpty() && image){
+                if (description.isNotEmpty() || image){
                     binding.btnPost.isEnabled = true
                     binding.btnPost.background= AppCompatResources.getDrawable(this@AskFavorActivity, R.drawable.post_button)
                     binding.btnPost.setTextColor(resources.getColor(R.color.white))
@@ -159,13 +160,23 @@ class AskFavorActivity : AppCompatActivity() {
     private fun uploadPost() {
 
 
-        if (imageUri.toString().length<5){
-            // post has no image
+        if (imageUri.toString().length>5){
+            // post has  image
             dialog.show()
-            val postImageRef = storage.reference
-                .child("favor")
-                .child(auth.uid!!)
-                .child(Date().time.toString())
+            if (binding.btnSelectPostType.text.equals(options[0])) {
+                dialog.show()
+                val postImageRef = storage.reference
+                    .child("favor")
+                    .child(auth.uid!!)
+                    .child(Date().time.toString())
+                postImageRef.putFile(imageUri).addOnSuccessListener {
+                    postImageRef.downloadUrl
+                        .addOnSuccessListener {
+                            val postUploadData0 = Post()
+                            postUploadData0.postImage = it.toString()
+                            postUploadData0.postedBy = auth.uid
+                            postUploadData0.postDescription = binding.etPostDescription.text.toString()
+                            postUploadData0.postTime = Date().time
 
             val postUploadData = Post()
             postUploadData.postImage = ""
@@ -187,20 +198,107 @@ class AskFavorActivity : AppCompatActivity() {
                         "Post posted Successfully",
                         Toast.LENGTH_SHORT
                     ).show()
-                }
-        }
+                            database.reference
+                                .child("favor")
+                                .push()
+                                .setValue(postUploadData0)
+                                .addOnSuccessListener {
+                                    dialog.dismiss()
+                                    Toast.makeText(
+                                        this@AskFavorActivity,
+                                        "Post posted Successfully",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
-        else if (binding.btnSelectPostType.text.equals(options[0])) {
+                                    val notification = Notification()
+                                    notification.notificationBy = FirebaseAuth.getInstance().uid
+                                    notification.notificationTime = Date().time
+                                    notification.postID = postUploadData0.postID
+                                    notification.postedBy = postUploadData0.postedBy
+                                    notification.notificationType = " favor"
+                                }
+                        }
+                }
+            }
+            if (binding.btnSelectPostType.text.equals(options[1])) {
+                dialog.show()
+                val postImageRef = storage.reference
+                    .child("buy_and_sale")
+                    .child(auth.uid!!)
+                    .child(Date().time.toString())
+                postImageRef.putFile(imageUri).addOnSuccessListener {
+                    postImageRef.downloadUrl
+                        .addOnSuccessListener {
+                            val postUploadData1 = Post()
+                            postUploadData1.postImage = it.toString()
+                            postUploadData1.postDescription = binding.etPostDescription.text.toString()
+                            postUploadData1.itemPrice = binding.itemPrice.text.toString()
+                            postUploadData1.postedBy = auth.uid
+                            database.reference
+                                .child("buyAndSale")
+                                .push()
+                                .setValue(postUploadData1)
+                                .addOnSuccessListener {
+                                    dialog.dismiss()
+                                    Toast.makeText(
+                                        this@AskFavorActivity,
+                                        "Posted Successfully",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                        }
+                }
+            }
+
+            if (binding.btnSelectPostType.text.equals(options[2])) {
+                Log.d("TAG112233", "uploading image ")
+
+                dialog.show()
+                val postImageRef = storage.reference
+                    .child("lost_and_found")
+                    .child(auth.uid!!)
+                    .child(Date().time.toString())
+                postImageRef.putFile(imageUri).addOnSuccessListener {
+                    Log.d("TAG112233", "uploading image ")
+
+
+                    postImageRef.downloadUrl
+                        .addOnSuccessListener {
+
+                            Log.d("TAG112233", "image link downlaoded: ")
+                            val postUploadData2 = Post()
+                            postUploadData2.postImage = it.toString()
+                            postUploadData2.postedBy = auth.uid
+                            postUploadData2.postDescription = binding.etPostDescription.text.toString()
+                            postUploadData2.postTime = Date().time
+
+                            database.reference
+                                .child("lostAndFound")
+                                .push()
+                                .setValue(postUploadData2)
+                                .addOnSuccessListener {
+                                    Log.d("TAG112233", "post uploaded ")
+
+                                    dialog.dismiss()
+                                    Toast.makeText(
+                                        this@AskFavorActivity,
+                                        "Posted Successfully",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                        }
+                }.addOnFailureListener{
+                    Toast.makeText(this, "${it.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }else{
+
+            //post has no image
+        if (binding.btnSelectPostType.text.equals(options[0])) {
             dialog.show()
-            val postImageRef = storage.reference
-                .child("favor")
-                .child(auth.uid!!)
-                .child(Date().time.toString())
-            postImageRef.putFile(imageUri).addOnSuccessListener {
-                postImageRef.downloadUrl
-                    .addOnSuccessListener {
+
                         val postUploadData0 = Post()
-                        postUploadData0.postImage = it.toString()
+                        postUploadData0.postImage = ""
                         postUploadData0.postedBy = auth.uid
                         postUploadData0.postDescription = binding.etPostDescription.text.toString()
                         postUploadData0.postTime = Date().time
@@ -227,21 +325,14 @@ class AskFavorActivity : AppCompatActivity() {
                                 notification.postedBy = postUploadData0.postedBy
                                 notification.notificationType = " favor"
                             }
-                    }
-            }
-        }
 
-        else if (binding.btnSelectPostType.text.equals(options[1])) {
+            }
+
+        if (binding.btnSelectPostType.text.equals(options[1])) {
             dialog.show()
-            val postImageRef = storage.reference
-                .child("buy_and_sale")
-                .child(auth.uid!!)
-                .child(Date().time.toString())
-            postImageRef.putFile(imageUri).addOnSuccessListener {
-                postImageRef.downloadUrl
-                    .addOnSuccessListener {
+
                         val postUploadData1 = Post()
-                        postUploadData1.postImage = it.toString()
+                        postUploadData1.postImage = ""
                         postUploadData1.postDescription = binding.etPostDescription.text.toString()
                         postUploadData1.itemPrice = binding.itemPrice.text.toString()
                         postUploadData1.postedBy = auth.uid
@@ -257,21 +348,18 @@ class AskFavorActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                    }
-            }
-        }
 
-        else if (binding.btnSelectPostType.text.equals(options[2])) {
-            dialog.show()
-            val postImageRef = storage.reference
-                .child("lost_and_found")
-                .child(auth.uid!!)
-                .child(Date().time.toString())
-            postImageRef.putFile(imageUri).addOnSuccessListener {
-                postImageRef.downloadUrl
-                    .addOnSuccessListener {
+            }
+
+
+         if (binding.btnSelectPostType.text.equals(options[2])) {
+             Log.d("TAG112233", "uploading image ")
+
+             dialog.show()
+
+                        Log.d("TAG112233", "image link downlaoded: ")
                         val postUploadData2 = Post()
-                        postUploadData2.postImage = it.toString()
+                        postUploadData2.postImage = ""
                         postUploadData2.postedBy = auth.uid
                         postUploadData2.postDescription = binding.etPostDescription.text.toString()
                         postUploadData2.postTime = Date().time
@@ -281,6 +369,8 @@ class AskFavorActivity : AppCompatActivity() {
                             .push()
                             .setValue(postUploadData2)
                             .addOnSuccessListener {
+                                Log.d("TAG112233", "post uploaded ")
+
                                 dialog.dismiss()
                                 Toast.makeText(
                                     this@AskFavorActivity,
@@ -288,8 +378,10 @@ class AskFavorActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                    }
+
             }
+        }
+
         }
     }
 

@@ -49,7 +49,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/material_dynamic_neutral70"
+        android:background="@color/mediumGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnClose" />
@@ -60,7 +60,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="16dp"
-        android:src="@color/material_dynamic_neutral40"
+        android:src="@drawable/place_holder_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -103,21 +103,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSelectPostType" />
 
-    <androidx.appcompat.widget.AppCompatButton
+
+    <Button
         android:id="@+id/btnPost"
-        android:layout_width="75dp"
+        android:layout_width="85dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/border"
         android:enabled="false"
+        android:layout_marginEnd="8dp"
         android:text="@string/post"
-        android:textColor="@color/mediumGray"
+        android:background="@drawable/border_post_button"
         android:textSize="16sp"
-        app:cornerRadius="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/ivUserProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivUserProfile"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btnPost"-->
+<!--        android:layout_width="75dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:background="@drawable/border"-->
+<!--        android:enabled="false"-->
+<!--        android:text="@string/post"-->
+<!--        android:textColor="@color/mediumGray"-->
+<!--        android:textSize="16sp"-->
+<!--        app:cornerRadius="2dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/ivUserProfile"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />-->
 
     <ImageView
         android:id="@+id/show_image"

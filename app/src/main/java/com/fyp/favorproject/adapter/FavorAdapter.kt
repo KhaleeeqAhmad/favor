@@ -94,7 +94,7 @@ class FavorAdapter(
 
             val friendUID = currentFavor.postedBy.toString()
 
-            val intent = Intent(context?.requireContext(), ChattingActivity::class.java).apply {
+            val intent = Intent(context.requireContext(), ChattingActivity::class.java).apply {
 
                 putExtra("friendUID", friendUID)
             }
@@ -153,6 +153,17 @@ class FavorAdapter(
                 override fun onCancelled(error: DatabaseError) = Unit
             })
 
+
+        holder.postShare.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "${holder.postDescription}"
+                    + "${postList[holder.absoluteAdapterPosition]} "
+                    + "\n link of the post" + "${postList[holder.absoluteAdapterPosition]}")
+            intent.type = "text/plain"
+            context.startActivity(Intent.createChooser(intent, "Sent to"))
+        }
+
+
     }
 
 
@@ -169,7 +180,9 @@ class FavorAdapter(
         val postImage: ImageView = itemView.findViewById(R.id.ivPostImage)
         val postLikes: TextView = itemView.findViewById(R.id.btnLike)
         val postResponse: TextView = itemView.findViewById(R.id.btnRespond)
-        //val postShare: TextView = itemView.findViewById(R.id.btnShare)
+        val postShare: TextView = itemView.findViewById(R.id.btnShare)
 
     }
+
+
 }
