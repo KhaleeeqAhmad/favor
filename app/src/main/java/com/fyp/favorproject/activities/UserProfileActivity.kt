@@ -22,31 +22,6 @@ class UserProfileActivity : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var storage: FirebaseStorage
 
-    private val contractForCoverPhoto = registerForActivityResult(ActivityResultContracts.GetContent()) {
-        binding.ivUserCoverPhoto.setImageURI(it)
-        val referenceCoverPhoto = storage.reference.child("cover_photo")
-            .child(auth.uid!!)
-        referenceCoverPhoto.putFile(it!!).addOnSuccessListener {
-            referenceCoverPhoto.downloadUrl.addOnSuccessListener { imageLink ->
-                Toast.makeText(this@UserProfileActivity, "Cover photo saved!", Toast.LENGTH_SHORT).show()
-
-                database.reference.child("User").child(auth.uid!!).child("userCoverPhoto").setValue(imageLink.toString())
-            }
-        }
-    }
-
-    private val contractForProfilePhoto = registerForActivityResult(ActivityResultContracts.GetContent()) {
-        binding.ivUserProfilePhoto.setImageURI(it)
-        val referenceCoverPhoto = storage.reference.child("profile_photo")
-            .child(auth.uid!!)
-        referenceCoverPhoto.putFile(it!!).addOnSuccessListener {
-            referenceCoverPhoto.downloadUrl.addOnSuccessListener { imageLink ->
-                Toast.makeText(this@UserProfileActivity, "Profile photo saved!", Toast.LENGTH_SHORT).show()
-                database.reference.child("User").child(auth.uid!!).child("userProfilePhoto").setValue(imageLink.toString())
-            }
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
@@ -64,7 +39,12 @@ class UserProfileActivity : AppCompatActivity() {
         binding.btnChangeProfilePhoto.setOnClickListener {
             contractForProfilePhoto.launch("image/*")
         }
+
+
+
     }
+
+
 
     private fun getUserData() {
         val userProfile = database.reference.child("User")
@@ -89,6 +69,31 @@ class UserProfileActivity : AppCompatActivity() {
 
             override fun onCancelled(error: DatabaseError) = Unit
         })
+    }
+
+    private val contractForCoverPhoto = registerForActivityResult(ActivityResultContracts.GetContent()) {
+        binding.ivUserCoverPhoto.setImageURI(it)
+        val referenceCoverPhoto = storage.reference.child("cover_photo").child(auth.uid!!)
+
+        referenceCoverPhoto.putFile(it!!).addOnSuccessListener {
+            referenceCoverPhoto.downloadUrl.addOnSuccessListener { imageLink ->
+                Toast.makeText(this@UserProfileActivity, "Cover photo saved!", Toast.LENGTH_SHORT).show()
+
+                database.reference.child("User").child(auth.uid!!).child("userCoverPhoto").setValue(imageLink.toString())
+            }
+        }
+    }
+
+    private val contractForProfilePhoto = registerForActivityResult(ActivityResultContracts.GetContent()) {
+        binding.ivUserProfilePhoto.setImageURI(it)
+        val referenceCoverPhoto = storage.reference.child("profile_photo").child(auth.uid!!)
+
+        referenceCoverPhoto.putFile(it!!).addOnSuccessListener {
+            referenceCoverPhoto.downloadUrl.addOnSuccessListener { imageLink ->
+                Toast.makeText(this@UserProfileActivity, "Profile photo saved!", Toast.LENGTH_SHORT).show()
+                database.reference.child("User").child(auth.uid!!).child("userProfilePhoto").setValue(imageLink.toString())
+            }
+        }
     }
 }
 

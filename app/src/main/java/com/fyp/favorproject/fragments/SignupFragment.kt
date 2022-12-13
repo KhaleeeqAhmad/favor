@@ -1,5 +1,6 @@
 package com.fyp.favorproject.fragments
 
+import android.Manifest
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,7 +15,10 @@ import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.FragmentSignupBinding
 import com.fyp.favorproject.model.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.actionCodeSettings
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +32,9 @@ class SignupFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private var fullEmail = ""
+    private val OUR_PERMISSION_CODE = 1000
 
+    var vFilename: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +42,8 @@ class SignupFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSignupBinding.inflate(inflater, container, false)
+        val camPermission = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        val storagePermission = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, )
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
@@ -98,6 +106,8 @@ class SignupFragment : Fragment() {
         }
     }
 
+
+
     private fun registerUser() {
         val name = binding.userNameUR.text.toString()
         val department = binding.etDepartment.text.toString()
@@ -120,6 +130,20 @@ class SignupFragment : Fragment() {
                             }.await()
                         withContext(Dispatchers.Main) {
                             Toast.makeText(context, "User data saved!", Toast.LENGTH_SHORT).show()
+                            val actionCodeSettings = actionCodeSettings {
+                                // This must be true
+                                handleCodeInApp = true
+                                setAndroidPackageName(
+                                    "com.fyp.favor",
+                                    true, /* installIfNotAvailable */
+                                    "12" /* minimumVersion */)
+                            }
+                            Firebase.auth.sendSignInLinkToEmail(email, actionCodeSettings)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        Log.d("LALALA", "Email sent.")
+                                    }
+                                }
                             findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
                         }
                     } else {
@@ -152,20 +176,14 @@ class SignupFragment : Fragment() {
         val disciplineAdapter = ArrayAdapter(requireContext(), R.layout.drop_down_item, discipline)
 
         binding.etDepartment.setAdapter(departmentAdapter)
-
-
-
         binding.etYear.setAdapter(batchAdapter)
-
-
         binding.etDiscipline.setAdapter(disciplineAdapter)
 
     }
 
     private fun createEmailListener() {
 
-        fullEmail =
-            binding.etYear.text.toString() + "-" + binding.etDiscipline.text.toString() + "-" + binding.etRegNum.text.toString()
+        fullEmail = binding.etYear.text.toString() + "-" + binding.etDiscipline.text.toString() + "-" + binding.etRegNum.text.toString()
         binding.emailRU.setText(fullEmail)
         fullEmail = binding.emailRU.text.toString()
     }

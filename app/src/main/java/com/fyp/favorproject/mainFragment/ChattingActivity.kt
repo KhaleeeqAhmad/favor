@@ -59,7 +59,7 @@ class ChattingActivity : AppCompatActivity() {
                 override fun onChatStart(friend: User, currentUser: User, chats: ArrayList<Chats>) {
 
                     binding.progressBarChattingActivity.visibility= View.GONE
-                    Toast.makeText(this@ChattingActivity, "${friend.userID}", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@ChattingActivity, "${friend.userID}", Toast.LENGTH_SHORT).show()
 
                     setSupportActionBar(binding.chattingToolbar)
 
@@ -86,7 +86,7 @@ class ChattingActivity : AppCompatActivity() {
                     database.reference.child("Chats").child(senderRoom).child("message")
                         .addValueEventListener(object : ValueEventListener  {
                             override fun onDataChange(snapshot: DataSnapshot) {
-                                Toast.makeText(this@ChattingActivity, "New Message", Toast.LENGTH_SHORT).show()
+                                //Toast.makeText(this@ChattingActivity, "New Message", Toast.LENGTH_SHORT).show()
                                 messages.clear()
                                 for (snapshot1 in snapshot.children){
                                     val message: Message? = snapshot1.getValue(Message::class.java)

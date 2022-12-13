@@ -37,34 +37,36 @@ class LoginFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         navigationControl()
 
-        executor = ContextCompat.getMainExecutor(requireContext())
-        biometricPrompt = BiometricPrompt(this, executor, object: BiometricPrompt.AuthenticationCallback(){
-            override fun onAuthenticationFailed() {
-                super.onAuthenticationFailed()
-                Toast.makeText(requireContext(), "Fingerprint login failed", Toast.LENGTH_SHORT).show()
+        binding.btnFingerprintOption.setOnClickListener{
+            executor = ContextCompat.getMainExecutor(requireContext())
+            biometricPrompt = BiometricPrompt(this, executor, object: BiometricPrompt.AuthenticationCallback(){
+                override fun onAuthenticationFailed() {
+                    super.onAuthenticationFailed()
+                    Toast.makeText(requireContext(), "Fingerprint login failed", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                    super.onAuthenticationError(errorCode, errString)
+                    Toast.makeText(requireContext(), "Error $errorCode  Enter login details manually", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                    super.onAuthenticationSucceeded(result)
+                    findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+                    activity?.finish()
+                }
+            })
+
+            promptInfo = BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Favor Fingerprint Login")
+                .setDescription("Already logged in account can login using fingerprint after reopening app")
+                .setConfirmationRequired(true)
+                .setNegativeButtonText("Cancel").build()
+
+            if (FirebaseAuth.getInstance().currentUser != null) {
+                biometricPrompt.authenticate(promptInfo)
+
             }
-
-            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                super.onAuthenticationError(errorCode, errString)
-                Toast.makeText(requireContext(), "Error $errorCode  Enter login details manually", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                super.onAuthenticationSucceeded(result)
-                Toast.makeText(requireContext(), "Login", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
-                activity?.finish()
-            }
-        })
-
-        promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Fingerprint Login")
-            .setDescription("--")
-            .setNegativeButtonText("Cancel").build()
-
-        if (FirebaseAuth.getInstance().currentUser != null) {
-            biometricPrompt.authenticate(promptInfo)
-
         }
 
         return binding.root
@@ -74,9 +76,10 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener {
             userLogin()
         }
-        binding.btnForgetPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_resetPasswordFragment)
-        }
+//        binding.btnForgetPassword.setOnClickListener {
+//            val email = binding.loginEmail.text.toString()
+//
+//        }
         binding.btnGotoSignup.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }

@@ -13,6 +13,7 @@
     <string name="connect_using_google">Connect using Google</string>
     <string name="are_you_a_new_user">Are you a new User?</string>
     <string name="sign_up">Sign up</string>
+    <string name="take_photo">Take Photo</string>
     <string name="new_post">New Post</string>
     <string name="notifications">Notifications</string>
     <string name="sign_in"> Sign in</string>
@@ -62,7 +63,7 @@
     <string name="post">Post</string>
     <string name="upload_a_document">Upload a Document</string>
     <string name="upload_a_picture">Upload a Picture</string>
-    <string name="what_s_on_your_mind">What\'s on your mind?</string>
+    <string name="what_s_on_your_mind">Enter post description. Photo is also required to post.</string>
     <string name="post_for_favor">Post for favor</string>
     <string name="feed">Feed</string>
     <string name="post_in_feed">Post in Feed</string>
@@ -127,6 +128,9 @@
     <string name="_027">027</string>
     <string name="reg_no">Reg No.</string>
     <string name="_0">0</string>
+    <string name="login_with_fingerprint">Already logged in? Use fingerprint</string>
+    <string name="deletepost">delete_post</string>
+    <string name="delete_post">deletePost</string>
 
     <string-array name="Departments">
        <item>Computer Science</item>

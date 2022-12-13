@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.ActivityMainBinding
 import com.fyp.favorproject.model.User
-import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -20,10 +20,15 @@ import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
+    private val TAG ="AAYYT"
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseStorage
     private lateinit var database: FirebaseDatabase
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -37,7 +42,12 @@ class MainActivity : AppCompatActivity() {
         storage = FirebaseStorage.getInstance()
 
         setupNavigation()
+
+
     }
+
+
+
 
     // Bottom Navigation Setup.
     @SuppressLint("SetTextI18n")

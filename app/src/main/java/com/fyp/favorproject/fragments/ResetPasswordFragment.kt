@@ -5,23 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.fyp.favorproject.R
 import com.fyp.favorproject.databinding.FragmentResetPasswordBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class ResetPasswordFragment : Fragment() {
-    private lateinit var view: FragmentResetPasswordBinding
+    private lateinit var binding: FragmentResetPasswordBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        view = FragmentResetPasswordBinding.inflate(inflater)
+        binding = FragmentResetPasswordBinding.inflate(inflater)
+        val auth = FirebaseAuth.getInstance()
 
-        view.btnSendCode.setOnClickListener {
-            findNavController().navigate(R.id.action_resetPasswordFragment_to_loginFragment)
+        binding.btnSendCode.setOnClickListener {
+           // findNavController().navigate(R.id.action_resetPasswordFragment_to_loginFragment)
+
+            auth.currentUser!!.updatePassword("")
+
         }
-            return view.root
+            return binding.root
     }
 }

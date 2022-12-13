@@ -134,6 +134,18 @@
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
+<!--                <ImageView-->
+<!--                    android:id="@+id/iv_messageCamera"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="3"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:layout_marginEnd="4dp"-->
+<!--                    android:src="@drawable/ic_camera"-->
+<!--                    app:tint="#9C9C9C"-->
+<!--                    tools:ignore="ContentDescription" />-->
+
                 <ImageView
                     android:id="@+id/iv_messageAttachment"
                     android:layout_width="match_parent"
@@ -146,17 +158,6 @@
                     app:tint="#9C9C9C"
                     tools:ignore="ContentDescription,ImageContrastCheck" />
 
-                <ImageView
-                    android:id="@+id/iv_messageCamera"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:padding="8dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:src="@drawable/ic_camera"
-                    app:tint="#9C9C9C"
-                    tools:ignore="ContentDescription" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

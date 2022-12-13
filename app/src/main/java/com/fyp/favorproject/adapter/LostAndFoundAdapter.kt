@@ -3,7 +3,6 @@ package com.fyp.favorproject.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -50,6 +49,29 @@ class LostAndFoundAdapter(
             holder.postDescription.text = currentPost.postDescription
         }
 
+//        holder.postTotalResponses.setOnClickListener{
+//            if (currentPost.postedBy.toString() == FirebaseAuth.getInstance().uid!!) {
+//                Toast.makeText(context.requireContext(), "This is your post; Can't open chat", Toast.LENGTH_LONG).show()
+//                return@setOnClickListener
+//            }
+//            clickResponse.clickResponse(currentPost.postedBy.toString())
+//        }
+
+
+//        holder.postTotalResponses.setOnClickListener{
+//            if (currentPost.postedBy.toString() == FirebaseAuth.getInstance().uid!!){
+//                Toast.makeText(context.requireContext(), "You can't response to your post", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//
+//            val friendUID = currentPost.postedBy.toString()
+//
+//            val intent = Intent(context?.requireContext(), ChattingActivity::class.java).apply {
+//
+//                putExtra("friendUID", friendUID)
+//            }
+//            context.startActivity(intent)
+//        }
 
         //Lost Found Data
         FirebaseDatabase.getInstance().reference.child("User").child(currentPost.postedBy!!)
@@ -78,8 +100,8 @@ class LostAndFoundAdapter(
         val postDate: TextView = itemView.findViewById(R.id.tvPostTime)
         val postDescription : TextView = itemView.findViewById(R.id.etPostDescription)
         val postImage: ImageView = itemView.findViewById(R.id.ivPostImage)
-        val postTotalResponses: ImageButton = itemView.findViewById(R.id.btnRespond)
-        val postShares: ImageButton = itemView.findViewById(R.id.btnShare)
+  //      val postTotalResponses: ImageButton = itemView.findViewById(R.id.btnRespondLnF)
+  //      val postShares: ImageButton = itemView.findViewById(R.id.btnShare)
 
     }
 }

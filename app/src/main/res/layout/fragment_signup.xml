@@ -211,9 +211,9 @@
         android:text="@string/sign_up"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordUserRegister"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordUserRegister" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvAlreadyAUser"
@@ -238,6 +238,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvAlreadyAUser"
-        app:layout_constraintTop_toTopOf="@+id/tvAlreadyAUser" />
+        app:layout_constraintTop_toTopOf="@+id/tvAlreadyAUser"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

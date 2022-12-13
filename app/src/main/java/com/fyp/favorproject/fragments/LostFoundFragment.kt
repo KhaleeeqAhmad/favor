@@ -23,6 +23,7 @@ class LostFoundFragment : Fragment() {
     private lateinit var storage: FirebaseStorage
     private lateinit var database: FirebaseDatabase
     private lateinit var lostFoundList: ArrayList<Post>
+    private lateinit var currentInstace: LostFoundFragment
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +35,7 @@ class LostFoundFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         storage = FirebaseStorage.getInstance()
+        currentInstace = this
 
         //RecyclerView
         val recyclerView = binding.recyclerViewLostFound
@@ -68,4 +70,14 @@ class LostFoundFragment : Fragment() {
             override fun onCancelled(error: DatabaseError) = Unit
         })
     }
+
+//    override fun clickResponse(uid: String) {
+//        if (uid == FirebaseAuth.getInstance().uid!!){
+//            return
+//        }
+//        val intent = Intent(requireContext(), ChattingActivity::class.java).apply {
+//            putExtra("friendUID", uid)
+//        }
+//        startActivity(intent)
+//    }
 }

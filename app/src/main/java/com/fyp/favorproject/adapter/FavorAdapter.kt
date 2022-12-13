@@ -53,8 +53,8 @@ class FavorAdapter(
         }
 
 
-        @Suppress("DEPRECATION") val date =
-            "${Date(currentFavor.postTime!!).toLocaleString().subSequence(0, 11)} "
+        @Suppress("DEPRECATION")
+        val date = "${Date(currentFavor.postTime!!).toLocaleString().subSequence(0, 11)} "
 
         holder.postDate.text = date
         holder.postLikes.text = "${currentFavor.postLikes}"
@@ -129,28 +129,21 @@ class FavorAdapter(
                                         .setValue(currentFavor.postLikes.plus(1))
                                         .addOnSuccessListener {
                                             holder.postLikes.setCompoundDrawablesWithIntrinsicBounds(
-                                                R.drawable.ic_post_liked,
-                                                0,
-                                                0,
-                                                0
-                                            )
+                                                R.drawable.ic_post_liked, 0, 0, 0)
                                             holder.postLikes.setTextColor(R.color.my_blue_primary)
 
                                             val notification = Notification()
-                                            notification.notificationBy =
-                                                FirebaseAuth.getInstance().uid
+                                            notification.notificationBy = FirebaseAuth.getInstance().uid
                                             notification.notificationTime = Date().time
                                             notification.postID = currentFavor.postID
                                             notification.postedBy = currentFavor.postedBy
                                             notification.notificationType = "like"
-
 
                                             FirebaseDatabase.getInstance().reference
                                                 .child("notification")
                                                 .child(currentFavor.postedBy!!)
                                                 .push()
                                                 .setValue(notification)
-
                                         }
                                 }
                         }
@@ -176,7 +169,7 @@ class FavorAdapter(
         val postImage: ImageView = itemView.findViewById(R.id.ivPostImage)
         val postLikes: TextView = itemView.findViewById(R.id.btnLike)
         val postResponse: TextView = itemView.findViewById(R.id.btnRespond)
-        val postShare: TextView = itemView.findViewById(R.id.btnShare)
+        //val postShare: TextView = itemView.findViewById(R.id.btnShare)
 
     }
 }

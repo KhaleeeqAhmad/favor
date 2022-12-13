@@ -2,6 +2,7 @@ package com.fyp.favorproject.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -47,8 +48,10 @@ class SearchActivity : AppCompatActivity() {
         binding.rvSearchUser.visibility = View.GONE
         val usersDataRef = database.getReference("User")
 
+        Log.d("AAAAAA", "getUsers:  1")
         usersDataRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                Log.d("AAAAAA", "getUsers:  2")
                 userList.clear()
                 if (snapshot.exists()) {
                     for (userSnap in snapshot.children) {
@@ -67,6 +70,7 @@ class SearchActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError)= Unit
 
         })
+        Log.d("AAAAAA", "getUsers:  3")
     }
     val messageListener = fun(friendUID: String){
 
