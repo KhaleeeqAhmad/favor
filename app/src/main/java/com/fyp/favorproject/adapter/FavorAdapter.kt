@@ -153,6 +153,7 @@ class FavorAdapter(
                 override fun onCancelled(error: DatabaseError) = Unit
             })
 
+
         holder.postShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_TEXT, "${holder.postDescription}"
