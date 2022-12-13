@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivUserProfile"
+            android:id="@+id/ivUserProfileFavRec"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="16dp"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvUserName"
+            android:id="@+id/tvUserNameFavRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -32,64 +32,64 @@
             android:textSize="16sp"
             android:textStyle="bold"
 
-            app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
-            app:layout_constraintTop_toTopOf="@+id/ivUserProfile" />
+            app:layout_constraintStart_toEndOf="@+id/ivUserProfileFavRec"
+            app:layout_constraintTop_toTopOf="@+id/ivUserProfileFavRec" />
 
         <TextView
-            android:id="@+id/tvUserDepartment"
+            android:id="@+id/tvUserDepartmentFavRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:hint="@string/department"
             android:textColor="?attr/colorOnSurface"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/tvUserName"
-            app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+            app:layout_constraintStart_toStartOf="@+id/tvUserNameFavRec"
+            app:layout_constraintTop_toBottomOf="@+id/tvUserNameFavRec" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView2FavRec"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_marginStart="4dp"
             android:contentDescription="@string/show_time"
             android:src="@drawable/ic_dot_time"
-            app:layout_constraintBottom_toBottomOf="@+id/tvUserDepartment"
-            app:layout_constraintStart_toEndOf="@+id/tvUserDepartment"
-            app:layout_constraintTop_toTopOf="@+id/tvUserDepartment" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvUserDepartmentFavRec"
+            app:layout_constraintStart_toEndOf="@+id/tvUserDepartmentFavRec"
+            app:layout_constraintTop_toTopOf="@+id/tvUserDepartmentFavRec" />
 
 
         <TextView
-            android:id="@+id/tvPostTime"
+            android:id="@+id/tvPostTimeFavRec"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:hint="@string/date"
             android:textColor="?attr/colorOnSurface"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2FavRec"
+            app:layout_constraintStart_toEndOf="@+id/imageView2FavRec"
+            app:layout_constraintTop_toTopOf="@+id/imageView2FavRec" />
 
         <View
             android:id="@+id/randomview"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPostDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/etPostDescriptionRecent" />
 
         <TextView
-            android:id="@+id/etPostDescription"
+            android:id="@+id/etPostDescriptionRecent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:textColor="?attr/colorOnSurface"
             android:textSize="14sp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/ivPostImage"
+            app:layout_constraintBottom_toTopOf="@+id/ivPostImageFavRec"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivUserProfile"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserProfileFavRec"
             app:layout_constraintVertical_bias="1.0" />
 
         <androidx.constraintlayout.widget.Barrier
@@ -99,12 +99,12 @@
             android:backgroundTint="@color/black"
 
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivUserProfile"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserProfileFavRec"
 
             />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@id/ivPostImage"
+            android:id="@id/ivPostImageFavRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -113,19 +113,19 @@
             android:src="@drawable/cover_photo_place_holder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivUserProfile"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserProfileFavRec"
             app:srcCompat="@drawable/test" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/ivPostImage"
-            app:layout_constraintStart_toStartOf="@+id/ivPostImage"
-            app:layout_constraintTop_toBottomOf="@+id/ivPostImage">
+            app:layout_constraintEnd_toEndOf="@+id/ivPostImageFavRec"
+            app:layout_constraintStart_toStartOf="@+id/ivPostImageFavRec"
+            app:layout_constraintTop_toBottomOf="@+id/ivPostImageFavRec">
 
             <TextView
-                android:id="@+id/btnLike"
+                android:id="@+id/btnLikeFavRec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawablePadding="8dp"
@@ -136,7 +136,7 @@
                 app:drawableLeftCompat="@drawable/ic_like"/>
 
             <TextView
-                android:id="@+id/btnShare"
+                android:id="@+id/btnShareFavRec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
@@ -148,7 +148,7 @@
 
 
             <TextView
-                android:id="@+id/btnDelete"
+                android:id="@+id/btnDeleteFavRec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"

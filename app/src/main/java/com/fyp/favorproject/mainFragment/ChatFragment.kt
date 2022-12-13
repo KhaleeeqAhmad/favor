@@ -34,8 +34,6 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        Log.d("CCAADD", "onChatsFetched: created ")
-        Toast.makeText(requireContext(), "Created", Toast.LENGTH_SHORT).show()
 
         binding = FragmentChatBinding.inflate(inflater)
 

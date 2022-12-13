@@ -16,7 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btnChangeCoverPhoto"
         android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
         android:src="@drawable/ic_camera"
         app:layout_constraintBottom_toBottomOf="@+id/ivUserCoverPhoto"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivUserProfilePhoto"

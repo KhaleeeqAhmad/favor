@@ -13,6 +13,7 @@ import com.fyp.favorproject.mainFragment.ChatFragment
 import com.fyp.favorproject.mainFragment.ChattingActivity
 import com.fyp.favorproject.model.Chats
 import com.squareup.picasso.Picasso
+import java.util.*
 
 class UsersAdapter(
     val context: Context,
@@ -33,8 +34,12 @@ class UsersAdapter(
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = usersArrayList[position]
+        @Suppress("DEPRECATION")
+        val date = "${Date(usersArrayList[position].lastMessageTime).toLocaleString().subSequence(0, 11)} "
+
         holder.binding.tvUsernameChatsitem.text = item.friendName
         holder.binding.tvLastmessaageChatsitem.text = item.lastMessage
+        holder.binding.tvTimestampChatitem.text = date
 
         try {
 

@@ -46,9 +46,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
-
     // Bottom Navigation Setup.
     @SuppressLint("SetTextI18n")
     private fun setupNavigation() {

@@ -119,6 +119,7 @@
             android:id="@+id/btnLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="150dp"
             android:drawablePadding="8dp"
             android:gravity="center|start"
             android:paddingHorizontal="8dp"
@@ -126,6 +127,7 @@
             android:text="@string/_0"
             app:drawableLeftCompat="@drawable/ic_like"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnRespond"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btnRespond" />
 
@@ -139,22 +141,22 @@
             android:textColor="?attr/colorOnSurface"
             app:drawableRightCompat="@drawable/ic_respond"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnShare"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnLike" />
 
-        <TextView
-            android:id="@+id/btnShare"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="center|start"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:textColor="?attr/colorOnSurface"
-            app:drawableRightCompat="@drawable/ic_share"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
+<!--        <TextView-->
+<!--            android:id="@+id/btnShare"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:gravity="center|start"-->
+<!--            android:paddingHorizontal="10dp"-->
+<!--            android:paddingVertical="5dp"-->
+<!--            android:textColor="?attr/colorOnSurface"-->
+<!--            app:drawableRightCompat="@drawable/ic_share"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

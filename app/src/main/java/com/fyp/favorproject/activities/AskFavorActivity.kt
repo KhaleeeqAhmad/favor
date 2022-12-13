@@ -1,5 +1,3 @@
-@file:Suppress("DEPRECATION")
-
 package com.fyp.favorproject.activities
 
 import android.app.ProgressDialog
@@ -29,6 +27,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import java.util.*
 
+@Suppress("DEPRECATION")
 class AskFavorActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAskFavorBinding
@@ -173,9 +172,13 @@ class AskFavorActivity : AppCompatActivity() {
             postUploadData.postedBy = auth.uid
             postUploadData.postDescription = binding.etPostDescription.text.toString()
             postUploadData.postTime = Date().time
+
+             val postID= database.reference
+                 .child("favor").push().key
+            postUploadData.postID=postID.toString()
             database.reference
                 .child("favor")
-                .push()
+                .child(postID!!)
                 .setValue(postUploadData)
                 .addOnSuccessListener {
                     dialog.dismiss()
@@ -202,9 +205,12 @@ class AskFavorActivity : AppCompatActivity() {
                         postUploadData0.postDescription = binding.etPostDescription.text.toString()
                         postUploadData0.postTime = Date().time
 
+                        val postID= database.reference
+                            .child("favor").push().key
+                        postUploadData0.postID=postID.toString()
                         database.reference
                             .child("favor")
-                            .push()
+                            .child(postID!!)
                             .setValue(postUploadData0)
                             .addOnSuccessListener {
                                 dialog.dismiss()
@@ -288,10 +294,8 @@ class AskFavorActivity : AppCompatActivity() {
     }
 
 
-    @Deprecated("Deprecated in Java", ReplaceWith(
-        "super.onActivityResult(requestCode, resultCode, data)",
-        "androidx.appcompat.app.AppCompatActivity"))
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
