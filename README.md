@@ -4,4 +4,4 @@ With Favor, you can post about anything - from books to furniture - and connect 
 
 In addition, Favor also includes a forum where you can share your thoughts and ideas with other students. Discuss topics ranging from academics to entertainment and make new friends in the process.
 
-So what are you waiting for? Download [App Name] now and start connecting with fellow hostel students!
+So what are you waiting for? Download Favor now and start connecting with fellow hostel students!
